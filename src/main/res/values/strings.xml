@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Naati CCL Englishwise</string>
+
+
+    <string name="splesh"><font color='#2a3490'>NAATI </font><font color='#E42F25'>CCL </font>  </string>
+    <string name="get_Started"> Get Started</string>
+
+
+    <string name="title1">Online Coaching
+</string>
+    <string name="title1_1">Mock Test</string>
+
+    <string name="title2">Mock Test </string>
+
+    <string name="title2_1">from Team United</string>
+
+    <string name="title3">Langauges</string>
+    <string name="title3_1">a Tab on Meetings</string>
+
+    <string name="Description1">With online classes offered at NAATI CCL EnglishWise, you get to choose from different types of courses, based on the level of preparation required.</string>
+    <string name="Description2">Get a glimpse of the real exam-like atmosphere with the mock examination at NAATI CCL EnglishWise.</string>
+    <string name="Description3">With NAATI CCL EnglishWise by your side, you can prepare yourself in various languages!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="noconnection">Kindly connect to a WIFI network or enable Mobile Data</string>
+    <string name="continue_with_google">Continue with google</string>
+    <string name="contact_hint">+61 XXX XX XXXX</string>
+    <string name="enter_mobile_number_to_sent_6_digit_verification_code">Enter mobile number to sent 6 digit verification code.</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_the_6_digit_otp_received_on_your_mobile_number">Enter the 6 digit OTP received on your mobile number</string>
+    <string name="resent_otp">Resent OTP</string>
+    <string name="profile">Profile</string>
+    <string name="action_text">OK</string>
+    <string name="message_enter_a_valid_Mobile_number">Enter a valid Mobile number</string>
+
+    <string-array name="spinner_Langage">
+
+        <item>English</item>
+        <item>Hindi</item>
+    </string-array>
+
+
+</resources>

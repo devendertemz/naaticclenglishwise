@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Activity.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="180dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/Opengallery"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+
+                android:background="@drawable/dotted">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circlelayout"
+                    android:visibility="visible" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                    android:id="@+id/iv_profile_photo"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    android:src="@drawable/profile"
+                    android:visibility="visible" />
+
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView
+                android:background="@drawable/circlelayout"
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo1"
+
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="25dp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+
+            android:orientation="vertical"
+
+            android:padding="10dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/profile"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Enter your full name"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+                <EditText
+
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+
+                    android:background="@color/grey_light_secondary"
+                    android:fontFamily="@font/robotomedium"
+                    android:hint="Eg. Cristina Marcelo"
+                    android:padding="10dp"
+
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Enter your email"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+
+                    android:background="@color/grey_light_secondary"
+                    android:fontFamily="@font/robotomedium"
+                    android:hint="Eg. xyz@gmail.com"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Enter Language"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:background="@color/grey_light_secondary"
+                    android:entries="@array/spinner_Langage"
+                    android:padding="10dp"
+
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+            </LinearLayout>
+
+
+            <TextView
+                android:paddingTop="20dp"
+                android:id="@+id/profile_continue"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/redbackground"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:text="Continue"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+
+            android:gravity="bottom"
+            android:src="@drawable/bglogo"
+            app:tint="@color/grey_light_secondary">
+
+        </ImageView>
+
+    </LinearLayout>
+
+</ScrollView>

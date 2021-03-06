@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "45582278505",
+    "project_id": "naati-ccl-englishwise",
+    "storage_bucket": "naati-ccl-englishwise.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45582278505:android:fed9c659680600cbd4e7f8",
+        "android_client_info": {
+          "package_name": "com.englishwise.naaticclenglishwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45582278505-budgp6bhmqjfapagn7ql5qmskirkk241.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.englishwise.naaticclenglishwise",
+            "certificate_hash": "db0b3c8ba5ea9585420b40dda0f3d36bd672337c"
+          }
+        },
+        {
+          "client_id": "45582278505-sr6ocu4eobc82ub7312m7bpjdd5ra2sd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz1YMTanCxEKz5z8cVNOSnjBMcnFJl9q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45582278505-sr6ocu4eobc82ub7312m7bpjdd5ra2sd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
