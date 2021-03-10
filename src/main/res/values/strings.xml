@@ -31,12 +31,19 @@
     <string name="profile">Profile</string>
     <string name="action_text">OK</string>
     <string name="message_enter_a_valid_Mobile_number">Enter a valid Mobile number</string>
-
+    <string name="main_page_selected">%s page is selected</string>
     <string-array name="spinner_Langage">
 
         <item>English</item>
         <item>Hindi</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_1_pte_naati_ccl"><![CDATA[NO. 1 PTE & NAATI CCL]]></string>
+    <string name="institute_inaustralia">Institute inAustralia</string>
+    <string name="the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level">The Credentialed Community Language Test (CCL) is an assessment of you languages abilities at a community level</string>
+    <string name="naati_languages">NAATI  LANGUAGES</string>
+    <string name="useful_resources">USEFUL RESOURCES</string>
 
 
 </resources>

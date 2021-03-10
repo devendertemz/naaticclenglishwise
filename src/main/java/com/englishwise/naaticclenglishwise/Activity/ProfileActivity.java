@@ -11,7 +11,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -57,5 +59,10 @@ public class ProfileActivity extends AppCompatActivity {
             imageUri = data.getData();
             iv_profile_photo.setImageURI(imageUri);
         }
+    }
+
+    public void profile_continue(View view) {
+        Intent in=new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(in);
     }
 }
