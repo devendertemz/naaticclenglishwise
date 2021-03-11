@@ -12,10 +12,10 @@ import com.englishwise.naaticclenglishwise.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
+ * Use the {@link MoreFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileFragment extends Fragment {
+public class MoreFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ProfileFragment() {
+    public MoreFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class ProfileFragment extends Fragment {
      * @return A new instance of fragment ProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
+    public static MoreFragment newInstance(String param1, String param2) {
+        MoreFragment fragment = new MoreFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

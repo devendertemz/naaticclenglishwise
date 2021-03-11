@@ -2,19 +2,17 @@ package com.englishwise.naaticclenglishwise;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.Activity.ProfileActivity;
+import com.englishwise.naaticclenglishwise.Fragment.CoachingFragment;
 import com.englishwise.naaticclenglishwise.Fragment.HomeFragment;
-import com.englishwise.naaticclenglishwise.Fragment.ProfileFragment;
+import com.englishwise.naaticclenglishwise.Fragment.MoreFragment;
+import com.englishwise.naaticclenglishwise.Fragment.SetTestFragment;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
 
@@ -22,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private final static int ID_HOME = 1;
-    private final static int ID_MESSAGE = 2;
-    private final static int ID_NOTIFICATION = 3;
-    private final static int ID_ACCOUNT = 4;
+    private final static int ID_TESTSET = 2;
+    private final static int ID_COACHING = 3;
+    private final static int ID_MORE = 4;
     MeowBottomNavigation bottomNavigation;
     int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
 
-       bottomNavigation = findViewById(R.id.bottomNavigation);
+        bottomNavigation = findViewById(R.id.bottomNavigation);
         MeowBottomNavigation();
 
 
@@ -43,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     public void MeowBottomNavigation() {
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_MESSAGE, R.drawable.ic_message));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_NOTIFICATION, R.drawable.ic_notifications));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_ACCOUNT, R.drawable.ic_account));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_TESTSET, R.drawable.ic_testset));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_COACHING, R.drawable.ic_coaching));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_MORE, R.drawable.ic_more));
 
 
         //  bottomNavigation.setCount(ID_HOME, "115");
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
-                id=item.getId();
+                id = item.getId();
                 Toast.makeText(MainActivity.this, "clicked item : " + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -68,25 +67,35 @@ public class MainActivity extends AppCompatActivity {
                     case ID_HOME:
 
 
-                 HomeFragment HomeFragment = new HomeFragment();
+                        HomeFragment HomeFragment = new HomeFragment();
                         FragmentManager manager = getSupportFragmentManager();
                         FragmentTransaction transaction = manager.beginTransaction();
                         transaction.replace(R.id.contentPanel, HomeFragment);
                         transaction.commit();
                         break;
 
-                    case ID_MESSAGE:
-                        name = "MESSAGE";
+                    case ID_TESTSET:
+
+                        SetTestFragment setTestFragment = new SetTestFragment();
+                        FragmentManager setTestFragmentmanager = getSupportFragmentManager();
+                        FragmentTransaction setTestFragmentransaction = setTestFragmentmanager.beginTransaction();
+                        setTestFragmentransaction.replace(R.id.contentPanel, setTestFragment);
+                        setTestFragmentransaction.commit();
                         break;
-                    case ID_NOTIFICATION:
-                        name = "NOTIFICATION";
+                    case ID_COACHING:
+
+                        CoachingFragment coachingFragment = new CoachingFragment();
+                        FragmentManager coachingFragmentmanager = getSupportFragmentManager();
+                        FragmentTransaction coachingFragmenttransaction = coachingFragmentmanager.beginTransaction();
+                        coachingFragmenttransaction.replace(R.id.contentPanel, coachingFragment);
+                        coachingFragmenttransaction.commit();
                         break;
-                    case ID_ACCOUNT:
+                    case ID_MORE:
 
 
-                        ProfileFragment profileFragment = new ProfileFragment();
+                        MoreFragment profileFragment = new MoreFragment();
                         FragmentManager profilemanager = getSupportFragmentManager();
-                        FragmentTransaction  profiletransaction = profilemanager.beginTransaction();
+                        FragmentTransaction profiletransaction = profilemanager.beginTransaction();
                         profiletransaction.replace(R.id.contentPanel, profileFragment);
                         profiletransaction.commit();
                         break;
@@ -128,14 +137,13 @@ public class MainActivity extends AppCompatActivity {
          */
 
 
-        if (id==0){
+        if (id == 0) {
 
             Intent a = new Intent(Intent.ACTION_MAIN);
             a.addCategory(Intent.CATEGORY_HOME);
             a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(a);
-        }
-        else {
+        } else {
             HomeFragment appNewsHome1Fragment = new HomeFragment();
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();

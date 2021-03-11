@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="80dp"
-    android:background="@drawable/bg2"
     android:orientation="vertical"
     tools:context=".Fragment.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/curvelayout"
+
+        android:layout_height="wrap_content">
+
 
 
     <LinearLayout
@@ -31,7 +38,7 @@
             android:fontFamily="@font/robotomedium"
             android:gravity="center"
             android:text="@string/no_1_pte_naati_ccl"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -42,18 +49,47 @@
             android:fontFamily="@font/robotomedium"
             android:gravity="center"
             android:text="@string/institute_inaustralia"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp">
 
         </TextView>
 
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/red"
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="Mock Test"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+
+                android:textSize="14dp">
+
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,39 +97,7 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/red"
-                android:orientation="vertical"
-                android:padding="20dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotomedium"
-                    android:text="Mock Test"
-                    android:textColor="@color/white"
-                    android:textSize="22sp"
-                    android:textStyle="bold">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/robotomedium"
-                    android:text="@string/the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/white"
-
-                    android:textSize="15dp">
-
-                </TextView>
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -125,36 +129,37 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+
                         android:fontFamily="@font/robotomedium"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Hindi"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Tamil"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Urdu"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                 </LinearLayout>
@@ -169,36 +174,36 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Punjabi"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Malayalam"
-                        android:textColor="@color/black"
                         android:textSize="13dp" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Telugu"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                 </LinearLayout>
@@ -213,36 +218,36 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
                         android:fontFamily="@font/robotomedium"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Nepaese"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"/>
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Gujarati"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:background="#CCCCCC"
-                        android:fontFamily="@font/robotomedium"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Spanish"
-                        android:textColor="@color/black"
                         android:textSize="16dp" />
 
                 </LinearLayout>
@@ -287,7 +292,7 @@
 
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                         />
+                        />
 
                     <TextView
                         android:layout_marginTop="8dp"
@@ -388,7 +393,7 @@
 
                         android:layout_height="70dp"
                         android:layout_gravity="center"
-                        android:src="@color/black" />
+                        android:src="@drawable/practice" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -412,7 +417,7 @@
 
                         android:layout_height="70dp"
                         android:layout_gravity="center"
-                        android:src="@color/black" />
+                        android:src="@drawable/stories" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -436,7 +441,7 @@
 
                         android:layout_height="70dp"
                         android:layout_gravity="center"
-                        android:src="@color/black" />
+                        android:src="@drawable/classes" />
 
                     <TextView
                         android:padding="5dp"
@@ -456,6 +461,6 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
+</ScrollView>

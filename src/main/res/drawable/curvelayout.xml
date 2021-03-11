@@ -2,14 +2,14 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/gray"/>
+            <solid android:color="#27386C"/>
         </shape>
     </item>
     <item
         android:top="200dp"
         android:bottom="0dp"
         android:left="-70dp"
-        android:right="-190dp">
+        android:right="-90dp">
 
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:innerRadius="50dp"

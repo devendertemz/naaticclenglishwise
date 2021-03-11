@@ -22,4 +22,6 @@
     <color name="grey_light_secondary">#cccccc</color>
     <color name="colorPrimaryDark">#ba160c</color>
 
+    <color name="languagecolor">#cccccc</color>
+
 </resources>
