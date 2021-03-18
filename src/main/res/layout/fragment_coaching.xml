@@ -1,15 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="80dp"
+
+    android:background="#27386C"
+    android:orientation="vertical"
     tools:context=".Fragment.CoachingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="bottom"
+        android:gravity="left|center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/ccl_coaching"
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+          >
+
+
+
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="left"
+                    android:text="@string/online_coaching"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:gravity="left"
+                    android:text="Course Details"
+
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/morebg"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_marginTop="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                 <!--   <include layout="@layout/no_course_available" />-->
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Point Calculator" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

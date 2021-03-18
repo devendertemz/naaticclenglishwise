@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/robotomedium"
+        android:gravity="left"
+        android:text="@string/no_course_available"
+        android:textColor="@color/red"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="20dp"
+        android:background="@drawable/button">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="3dp"
+            android:background="@color/grey_light_secondary"
+            android:gravity="left"
+            android:hint="Enter inquiry details"
+            android:padding="12dp"
+            android:textColor="@color/intro_description_color"
+            android:textColorHint="@color/intro_description_color"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/otpContinue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"
+        android:background="@drawable/redbackground"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text="Submit Inquiry"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+
+</LinearLayout>

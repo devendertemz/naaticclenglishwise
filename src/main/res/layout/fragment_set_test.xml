@@ -1,14 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.amar.library.ui.StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_marginBottom="70dp"
+    android:layout_height="wrap_content"
+    android:background="#27386C"
+    android:orientation="vertical"
+
+
+    app:stickyHeader="@+id/titleLayout"
     tools:context=".Fragment.SetTestFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="50dp"
+            android:layout_marginTop="20sp"
+            android:background="#27386C"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="left"
+                android:text="Practice Test"
+
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/language_IV"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="180dp"
+                android:padding="3dp"
+                android:src="@drawable/globe"
+                app:tint="@color/white"
+                tools:ignore="RtlHardcoded">
+
+            </ImageView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="left"
+                    android:text="NATTI CCL Practice Test Set"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:text="All Test Set"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/morebg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:padding="10dp"
+                            android:text="Material"
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/vocabulary"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text=" " />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:padding="10dp"
+                        android:text="Material"
+                        android:textColor="@color/gradient_end_color"
+                        android:textSize="12dp"
+                        android:textStyle="italic">
+
+                    </TextView>
+
+                    <View
+                        android:layout_width="match_parent"
+
+                        android:layout_height="1dp"
+                        android:layout_margin="20dp"
+                        android:background="@color/gradient_end_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Vocabulary_LL"
+                    style="@style/MenuItemParent"
+                    android:background="?selectableItemBackground">
+
+                    <ImageView
+                        style="@style/MenuItemImage"
+                        app:srcCompat="@drawable/vocabulary"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        style="@style/MenuItemLabel"
+                        android:text="" />
+
+                    <ImageView
+                        style="@style/MenuItemArrow"
+                        app:srcCompat="@drawable/ic_toolbar_back" />
+                </LinearLayout>
+
+                <View style="@style/MenuItemUnderline" />
+
+
+                <LinearLayout
+                    style="@style/MenuItemParent"
+                    android:background="?selectableItemBackground">
+
+                    <ImageView
+                        style="@style/MenuItemImage"
+                        app:srcCompat="@drawable/ic_more"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        style="@style/MenuItemLabel"
+                        android:text="" />
+
+                    <ImageView
+                        style="@style/MenuItemArrow"
+                        app:srcCompat="@drawable/ic_toolbar_back" />
+                </LinearLayout>
+
+                <View style="@style/MenuItemUnderline" />
+
+
+                <LinearLayout
+                    style="@style/MenuItemParent"
+                    android:background="?selectableItemBackground">
+
+                    <ImageView
+                        style="@style/MenuItemImage"
+                        app:srcCompat="@drawable/ic_more"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        style="@style/MenuItemLabel"
+                        android:text="" />
+
+                    <ImageView
+                        style="@style/MenuItemArrow"
+                        app:srcCompat="@drawable/ic_toolbar_back" />
+                </LinearLayout>
+
+                <View style="@style/MenuItemUnderline" />
+
+
+                <LinearLayout
+                    style="@style/MenuItemParent"
+                    android:background="?selectableItemBackground">
+
+                    <ImageView
+                        style="@style/MenuItemImage"
+                        app:srcCompat="@drawable/ic_more"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        style="@style/MenuItemLabel"
+                        android:text="" />
+
+                    <ImageView
+                        style="@style/MenuItemArrow"
+                        app:srcCompat="@drawable/ic_toolbar_back" />
+                </LinearLayout>
+
+                <View style="@style/MenuItemUnderline" />
+
+
+                <LinearLayout
+                    style="@style/MenuItemParent"
+                    android:background="?selectableItemBackground">
+
+                    <ImageView
+                        style="@style/MenuItemImage"
+                        app:srcCompat="@drawable/ic_more"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        style="@style/MenuItemLabel"
+                        android:text="CCL Test" />
+
+                    <ImageView
+                        style="@style/MenuItemArrow"
+                        app:srcCompat="@drawable/ic_toolbar_back" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.amar.library.ui.StickyScrollView>

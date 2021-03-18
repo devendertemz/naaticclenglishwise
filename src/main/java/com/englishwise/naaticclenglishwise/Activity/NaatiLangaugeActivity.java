@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 
 public class NaatiLangaugeActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class NaatiLangaugeActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_naati_langauge);
-        com.englishwise.naaticclenglishwise.Activity.util.util.blackiteamstatusbar(this, R.color.white);
+        util.blackiteamstatusbar(this, R.color.white);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
     }

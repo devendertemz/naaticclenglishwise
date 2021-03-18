@@ -36,6 +36,16 @@
 
         <item>English</item>
         <item>Hindi</item>
+
+        <item>Tamil</item>
+        <item>Urdu</item>
+        <item>Punjabi</item>
+        <item>Malayalam</item>
+        <item>Telugu</item>
+        <item>Nepaese</item>
+        <item>Gujarati</item>
+        <item>Spanish</item>
+
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -44,6 +54,60 @@
     <string name="the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level">The Credentialed Community Language Test (CCL) is an assessment of you languages abilities at a community level</string>
     <string name="naati_languages">NAATI  LANGUAGES</string>
     <string name="useful_resources">USEFUL RESOURCES</string>
+    <string name="online_coaching"><![CDATA[online coaching course & classes]]></string>
+    <string name="ccl_coaching">CCL Coaching</string>
+    <string name="no_course_available">No course available for Urdu Language</string>
 
 
+    <style name="MenuItemParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <style name="MenuItemImage">
+
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@drawable/moreitemcirlce</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="MenuItemLabel">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:minHeight">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="MenuItemArrow">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:rotation">180</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@color/red</item>
+
+    </style>
+
+    <style name="MenuItemUnderline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:background">@color/text_hint</item>
+    </style>
 </resources>

@@ -2,9 +2,11 @@ package com.englishwise.naaticclenglishwise.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final int PICK_IMAGE = 100;
@@ -33,7 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_profile);
-        com.englishwise.naaticclenglishwise.Activity.util.util.blackiteamstatusbar(this, R.color.white);
+      util.blackiteamstatusbar(this, R.color.white);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 
@@ -62,6 +65,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void profile_continue(View view) {
+        final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        vibe.vibrate(50);
+
         Intent in=new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(in);
     }

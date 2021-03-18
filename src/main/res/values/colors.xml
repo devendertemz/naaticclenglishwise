@@ -12,7 +12,7 @@
     <color name="darkWhite">#cfd8dc</color>
     <color name="tab_indicator_gray">#c0c0c0</color>
     <color name="gradient_start_color">#ff0000</color>
-    <color name="gradient_end_color">#2A3490</color>
+    <color name="gradient_end_color">#27386C</color>
     <color name="colorRed">#ff0000</color>
 
     <color name="intro_title_color">#000000</color>
@@ -23,5 +23,6 @@
     <color name="colorPrimaryDark">#ba160c</color>
 
     <color name="languagecolor">#cccccc</color>
+    <color name="text_hint">#bababa</color>
 
 </resources>

@@ -1,16 +1,504 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/curvelayout"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="80dp"
 
+    android:background="#27386C"
+    android:orientation="vertical"
     tools:context=".Fragment.MoreFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/robotomedium"
+            android:gravity="left"
+            android:text="Menu"
+
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/language_IV"
+            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:src="@drawable/globe"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded">
+
+        </ImageView>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center|left"
+
+                    android:orientation="horizontal"
+                    tools:ignore="RtlHardcoded">
+
+                    <FrameLayout
+                        android:id="@+id/Opengallery"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+
+                        android:background="@drawable/dotted">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circlelayout"
+                            android:visibility="visible" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+
+                            android:id="@+id/iv_profile_photo"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/profile"
+                            android:visibility="visible"
+                            app:civ_border_color="@color/white"
+                            app:civ_border_width="2dp" />
+
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="Devender Singh"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="devendertemz@gmail.com"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/edit_profile_LL"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+                        <ImageView
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/editprofile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:tint="@color/white">
+
+                        </ImageView>
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/morebg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:padding="10dp"
+                            android:text="Material"
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Vocabulary_LL"
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/vocabulary"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Vocabulary" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        android:id="@+id/Ebooks_LL"
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Ebooks" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Blogs" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Videos" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="CCL Test" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:padding="10dp"
+                            android:text="Other Service"
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Point Calculator" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Check My Visa" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Get My Policy" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Help us"
+
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Feedback" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Share App" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Rate App" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -27,7 +27,7 @@
         <ImageView
 
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/logo3" />
 
@@ -107,9 +107,13 @@
                 android:gravity="center"
                 android:text="@string/naati_languages"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
-
+            <View
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:layout_height="3dp"
+                android:background="@drawable/btn_click_app_dark_rectangle_with_semicircle_edge" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -126,19 +130,20 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/Hindi_TV"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:background="@color/languagecolor"
                         android:textColor="@color/black"
-
-                        android:fontFamily="@font/robotomedium"
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Hindi"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/Tamil_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -148,9 +153,11 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Tamil"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/Urdu_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -160,7 +167,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Urdu"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -171,6 +178,8 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/Punjabi_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -180,9 +189,11 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Punjabi"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/Malayalam_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="40dp"
                         android:layout_margin="8dp"
@@ -192,9 +203,11 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Malayalam"
-                        android:textSize="13dp" />
+                        android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/Telugu_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -204,7 +217,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Telugu"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -215,18 +228,22 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/Nepaese_TV"
+                        android:text="Nepaese"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:fontFamily="@font/robotomedium"
-                        android:gravity="center"
-                        android:padding="8dp"
-                        android:text="Nepaese"
 
                         android:background="@color/languagecolor"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:textSize="16sp"/>
 
                     <TextView
+                        android:id="@+id/Gujarati_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -236,9 +253,11 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Gujarati"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/Spanish_TV"
+
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -248,7 +267,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:text="Spanish"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -262,9 +281,13 @@
                 android:gravity="center"
                 android:text="@string/useful_resources"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
-
+            <View
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:layout_height="3dp"
+                android:background="@color/red" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -274,6 +297,7 @@
                 android:padding="5dp">
 
                 <LinearLayout
+                    android:id="@+id/All_Courses"
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:layout_marginRight="10dp"
@@ -308,6 +332,8 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/PTE_E_Book"
+
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:layout_marginRight="10dp"
@@ -339,6 +365,8 @@
                         android:textSize="12dp" />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/All_Branches"
+
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:layout_marginRight="10dp"
@@ -382,6 +410,7 @@
                 android:padding="10dp">
 
                 <LinearLayout
+                    android:id="@+id/Practice_LL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -404,8 +433,15 @@
                         android:text="How to Practice "
                         android:textColor="@color/black"
                         android:textSize="12dp" />
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_gravity="center"
+                        android:layout_height="3dp"
+                        android:background="@color/red" />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/Stories_LL"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -428,8 +464,16 @@
                         android:text="Our Stories"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_gravity="center"
+                        android:layout_height="3dp"
+                        android:background="@color/red" />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/OnlineClasse_LL"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -453,6 +497,12 @@
                         android:text="Online Classe"
                         android:textColor="@color/black"
                         android:textSize="12dp" />
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_gravity="center"
+                        android:layout_height="3dp"
+                        android:background="@color/red" />
                 </LinearLayout>
 
 
