@@ -14,9 +14,8 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.englishwise.naaticclenglishwise.Activity.util.util;
-import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 
 public class SplashActivity extends AppCompatActivity {
 

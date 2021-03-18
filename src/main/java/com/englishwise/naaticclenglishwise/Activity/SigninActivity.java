@@ -2,9 +2,12 @@ package com.englishwise.naaticclenglishwise.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,7 +38,7 @@ public class SigninActivity extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
     private static int RC_SIGN_IN = 100;
-
+    private Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +46,13 @@ public class SigninActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_signin);
-        com.englishwise.naaticclenglishwise.Activity.util.util.blackiteamstatusbar(this, R.color.white);
+       util.blackiteamstatusbar(this, R.color.white);
         Tv_Continue = findViewById(R.id.continue_tv);
         Ed_number = findViewById(R.id.number);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
+        final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
@@ -56,6 +61,8 @@ public class SigninActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibe.vibrate(50);
+
                 signIn();
 
             }
@@ -63,6 +70,7 @@ public class SigninActivity extends AppCompatActivity {
         Tv_Continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibe.vibrate(50);
 
                 String number = Ed_number.getText().toString();
                 if (number.isEmpty()) {

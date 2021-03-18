@@ -2,8 +2,10 @@ package com.englishwise.naaticclenglishwise.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import com.chaos.view.PinView;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 
 public class OTP_Verification extends AppCompatActivity {
     TextView otpContinue, resendotp;
@@ -27,16 +30,20 @@ public class OTP_Verification extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_o_t_p__verification);
 
-        com.englishwise.naaticclenglishwise.Activity.util.util.blackiteamstatusbar(this, R.color.white);
+      util.blackiteamstatusbar(this, R.color.white);
         otpContinue = findViewById(R.id.otpContinue);
         resendotp = findViewById(R.id.resendotp);
         pinView = findViewById(R.id.pinview);
+        final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
 
         otpContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OTP();            }
+                OTP();
+                vibe.vibrate(50);
+
+            }
         });
 
 

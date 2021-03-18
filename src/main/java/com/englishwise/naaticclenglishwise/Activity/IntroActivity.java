@@ -4,11 +4,13 @@ package com.englishwise.naaticclenglishwise.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
 import android.os.Bundle;
 
+import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -21,6 +23,7 @@ import com.englishwise.naaticclenglishwise.Adapter.IntroViewPagerAdapter;
 import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.Modal.ScreenItem;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.util.util;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -44,7 +47,8 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-        com.englishwise.naaticclenglishwise.Activity.util.util.blackiteamstatusbar(IntroActivity.this, R.color.white);
+      util.blackiteamstatusbar(IntroActivity.this, R.color.white);
+        final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -91,6 +95,7 @@ public class IntroActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                vibe.vibrate(50);
 
                 position = screenPager.getCurrentItem();
                 if (position < mList.size()) {
@@ -130,6 +135,8 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //open main activity
+                vibe.vibrate(50);
+
                 Intent mainActivity = new Intent(getApplicationContext(), SigninActivity.class);
                 startActivity(mainActivity);
                 // also we need to save a boolean value to storage so next time when the user run the app
@@ -147,6 +154,8 @@ public class IntroActivity extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                vibe.vibrate(50);
+
                 screenPager.setCurrentItem(mList.size());
             }
         });

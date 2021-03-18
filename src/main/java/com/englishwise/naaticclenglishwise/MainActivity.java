@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.englishwise.naaticclenglishwise.Fragment.CoachingFragment;
 import com.englishwise.naaticclenglishwise.Fragment.HomeFragment;
 import com.englishwise.naaticclenglishwise.Fragment.MoreFragment;
 import com.englishwise.naaticclenglishwise.Fragment.SetTestFragment;
+import com.englishwise.naaticclenglishwise.util.util;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 
 
@@ -29,7 +34,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+      /*  getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);*/
         setContentView(R.layout.activity_main);
+
+
+        util.blackiteamstatusbar(this, R.color.gradient_end_color);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
 
@@ -40,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void MeowBottomNavigation() {
+        final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_TESTSET, R.drawable.ic_testset));
@@ -66,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getId()) {
                     case ID_HOME:
 
+                      //  vibe.vibrate(50);
 
                         HomeFragment HomeFragment = new HomeFragment();
                         FragmentManager manager = getSupportFragmentManager();
@@ -75,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case ID_TESTSET:
+                        vibe.vibrate(50);
 
                         SetTestFragment setTestFragment = new SetTestFragment();
                         FragmentManager setTestFragmentmanager = getSupportFragmentManager();
@@ -83,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         setTestFragmentransaction.commit();
                         break;
                     case ID_COACHING:
+                        vibe.vibrate(50);
 
                         CoachingFragment coachingFragment = new CoachingFragment();
                         FragmentManager coachingFragmentmanager = getSupportFragmentManager();
@@ -92,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case ID_MORE:
 
+                        vibe.vibrate(50);
 
                         MoreFragment profileFragment = new MoreFragment();
                         FragmentManager profilemanager = getSupportFragmentManager();

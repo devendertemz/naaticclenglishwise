@@ -1,353 +1,466 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg2"
+    android:layout_marginBottom="80dp"
     android:orientation="vertical"
-    tools:context=".Activity.NaatiLangaugeActivity">
-
-
-
-
-
+    tools:context=".Fragment.HomeFragment">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:background="@drawable/curvelayout"
 
-        <ImageView
-
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="@drawable/logo3" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/robotomedium"
-            android:gravity="center"
-            android:text="@string/no_1_pte_naati_ccl"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:gravity="center"
-            android:text="@string/institute_inaustralia"
-            android:textColor="@color/black"
-            android:textSize="20dp">
-
-        </TextView>
-
-
-    </LinearLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/logo3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center"
+                android:text="@string/no_1_pte_naati_ccl"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center"
+                android:text="@string/institute_inaustralia"
+                android:textColor="@color/white"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/red"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="Mock Test"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text="@string/the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+
+                    android:textSize="14dp">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@color/red"
-        android:orientation="vertical"
-        android:padding="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:text="Mock Test"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold">
-
-        </TextView>
-
-        <TextView
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:textAlignment="textStart"
-            android:text="@string/the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level"
-            android:textColor="@color/white"
-
-            android:textSize="15dp">
-
-        </TextView>
-    </LinearLayout>
-    <TextView
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/robotomedium"
-        android:text="@string/naati_languages"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold"/>
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-     >
-
-
-
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/white"
-            android:orientation="horizontal"
-           >
 
             <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="Hindi"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-              />
-
-            <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="Tamil"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-               />
-            <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="Urdu"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-               />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/white"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="Punjabi"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                />
-
-            <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:fontFamily="@font/robotomedium"
-                android:text="Malayalam"
-                android:textColor="@color/black"
-                android:textSize="13dp"
-                />
-            <TextView
-                android:layout_margin="8dp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:background="#CCCCCC"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="Telugu"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        >
-
-        <TextView
-            android:layout_margin="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:background="#CCCCCC"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:text="Nepaese"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
-
-        <TextView
-            android:layout_margin="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:background="#CCCCCC"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:text="Gujarati"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
-        <TextView
-            android:layout_margin="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:background="#CCCCCC"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotomedium"
-            android:text="Spanish"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
-
-    </LinearLayout>
-
-    </LinearLayout>
-            <TextView
-                android:layout_marginTop="10dp"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotomedium"
+                android:gravity="center"
+                android:text="@string/naati_languages"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Hindi"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Tamil"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Urdu"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Punjabi"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Malayalam"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Telugu"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Nepaese"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Gujarati"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+
+                        android:background="@color/languagecolor"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Spanish"
+                        android:textSize="16dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center"
                 android:text="@string/useful_resources"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                android:textStyle="bold"/>
-    <LinearLayout
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
-        android:padding="10dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/red"
-            android:layout_marginRight="10dp"
-            android:padding="10dp"
+                android:textStyle="bold" />
 
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_gravity="center"
-                android:background="@drawable/icon1"
-                android:layout_width="60dp"
-                android:layout_height="70dp"/>
-            <TextView
-                android:padding="5dp"
-                android:gravity="center"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="All Courses"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/red"
-            android:padding="10dp"
-            android:layout_marginRight="10dp"
-
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_gravity="center"
-                android:src="@drawable/icon2"
-
-                android:layout_width="60dp"
-                android:layout_height="70dp"/>
-            <TextView
-                android:padding="5dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
-                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/red"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+
+                        android:layout_width="50dp"
+                        android:background="@drawable/icon1"
+
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="All Courses"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/red"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:background="@drawable/icon2"
+
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="PTE E-Book"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/red"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:background="@drawable/icon3"
+
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="All Branches"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/latest_video_homepage" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="PTE E-Book"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/red"
-            android:padding="10dp"
-
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@drawable/icon3"
-
-                android:layout_gravity="center"
-                android:layout_width="60dp"
-                android:layout_height="70dp"/>
-            <TextView
-                android:padding="4dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/robotomedium"
-                android:text="All Branches"
-                android:textColor="@color/white"
-                android:textSize="12dp"
-                />
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/practice" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="How to Practice "
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/stories" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Our Stories"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/classes" />
+
+                    <TextView
+                        android:padding="5dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/robotomedium"
+                        android:gravity="center"
+                        android:text="Online Classe"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>
