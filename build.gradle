@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.englishwise.naaticclenglishwise"
-        minSdkVersion 17
+        minSdkVersion 18
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -64,6 +64,8 @@ dependencies {
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
     //StickyScrollView
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
+
+
 
 }
 

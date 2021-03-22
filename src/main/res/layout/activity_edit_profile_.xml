@@ -11,15 +11,15 @@
     tools:context=".Activity.EditProfile_Activity">
 
     <LinearLayout
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
         <ImageView
             android:onClick="OnBackpress"
             android:layout_width="40dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:padding="3dp"
             android:rotation="180"
             android:src="@drawable/ic_arrow"
@@ -29,17 +29,31 @@
         </ImageView>
 
         <ImageView
-            android:id="@+id/language_IV"
+            android:id="@+id/Night_IV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
             android:padding="3dp"
-            android:src="@drawable/globe"
+            android:src="@drawable/moon"
             app:tint="@color/white"
             tools:ignore="RtlHardcoded">
 
         </ImageView>
 
+        <ImageView
+            android:visibility="gone"
+
+            android:id="@+id/Day_IV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:padding="3dp"
+
+            android:src="@drawable/sun"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded">
+
+        </ImageView>
 
     </LinearLayout>
 

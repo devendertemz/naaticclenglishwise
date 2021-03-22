@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="80dp"
-
     android:background="#27386C"
     android:orientation="vertical"
     tools:context=".Fragment.MoreFragment">
@@ -28,13 +27,13 @@
 
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/language_IV"
-            android:layout_marginLeft="250dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
             android:padding="3dp"
             android:src="@drawable/globe"
             app:tint="@color/white"
@@ -141,15 +140,15 @@
                         android:layout_margin="10dp"
                         android:orientation="vertical"
                         android:padding="5dp">
+
                         <ImageView
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/editprofile"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/editprofile"
                             app:tint="@color/white">
 
                         </ImageView>
-
 
 
                     </LinearLayout>
@@ -218,6 +217,7 @@
                     <View style="@style/MenuItemUnderline" />
 
 
+
                     <LinearLayout
                         android:id="@+id/Ebooks_LL"
                         style="@style/MenuItemParent"
@@ -241,6 +241,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/Blog_LL"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -262,6 +263,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/Videos_LL"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -283,6 +285,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/CCl_Test_LL"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -299,6 +302,7 @@
                             style="@style/MenuItemArrow"
                             app:srcCompat="@drawable/ic_toolbar_back" />
                     </LinearLayout>
+                    <View style="@style/MenuItemUnderline" />
 
 
                 </LinearLayout>
@@ -395,6 +399,7 @@
                             style="@style/MenuItemArrow"
                             app:srcCompat="@drawable/ic_toolbar_back" />
                     </LinearLayout>
+                    <View style="@style/MenuItemUnderline" />
 
 
                 </LinearLayout>
@@ -454,6 +459,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/Share_LL"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -475,6 +481,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/Rate_App_LL"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -496,8 +503,208 @@
 
 
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Help to You"
+
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Support" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Contact Us" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="FAQs" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Follow Us"
+
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="12dp"
+                            android:textStyle="italic">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+
+                            android:layout_height="1dp"
+                            android:layout_margin="20dp"
+                            android:background="@color/gradient_end_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Facebook" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Telegram" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <LinearLayout
+
+                        style="@style/MenuItemParent"
+                        android:background="?selectableItemBackground">
+
+                        <ImageView
+                            style="@style/MenuItemImage"
+                            app:srcCompat="@drawable/ic_more"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            style="@style/MenuItemLabel"
+                            android:text="Instagram" />
+
+                        <ImageView
+                            style="@style/MenuItemArrow"
+                            app:srcCompat="@drawable/ic_toolbar_back" />
+                    </LinearLayout>
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+
+                </LinearLayout>
 
             </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
