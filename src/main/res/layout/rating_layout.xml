@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gradient_end_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/fourcorner_curve"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/cancel_Iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            android:layout_gravity="right"
+            android:background="@drawable/crosss"
+            app:tint="@color/gradient_end_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DID YOU LIKE THE APP?"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/MenuItemUnderline"
+                android:layout_margin="8dp" />
+
+            <TextView
+                android:id="@+id/message"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hope you loved our app,\n Please  spare a few minutes and give your \n genuine ratings"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+            <RatingBar
+                android:id="@+id/rating"
+
+                style="?android:attr/accessibilityHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:theme="@style/RatingBar" />
+
+
+            <Button
+
+                android:id="@+id/read_btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/buttoncurve"
+                android:text="Rate App"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
