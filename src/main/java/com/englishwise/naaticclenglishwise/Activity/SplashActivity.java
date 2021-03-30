@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 import com.englishwise.naaticclenglishwise.util.util;
 
 public class SplashActivity extends AppCompatActivity {
@@ -52,5 +54,17 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (SharedPrefManager.getInstance(this).isLoggedin()) {
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(intent);
+        }
     }
 }

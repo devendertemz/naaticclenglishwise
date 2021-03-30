@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="8dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
    >
@@ -19,16 +21,17 @@
 
 
         <TextView
+            android:id="@+id/EnglishWord_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="3dp"
             android:text="Word"
-            android:textAllCaps="true"
             android:textColor="@color/vocabulary"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/SupportedLanguage_TV"
             android:layout_width="match_parent"
 
             android:layout_height="wrap_content"
@@ -45,7 +48,7 @@
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
 
 
 

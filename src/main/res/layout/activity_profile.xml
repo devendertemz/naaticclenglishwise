@@ -87,6 +87,16 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
+            <TextView
+                android:padding="3dp"
+                android:id="@+id/d_tax_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/create_your_profile_by_filling_in_the_credentials"
+                android:textColor="@color/gray"
+                android:textSize="13dp"
+                android:textStyle="normal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,7 +118,7 @@
 
                 <EditText
 
-
+                    android:id="@+id/ET_Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
@@ -120,6 +130,12 @@
 
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
+                <LinearLayout
+                    android:id="@+id/LL_Email"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -131,6 +147,7 @@
                     android:textStyle="normal" />
 
                 <EditText
+                    android:id="@+id/ET_Email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
@@ -142,6 +159,38 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
 
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/LL_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/robotomedium"
+                        android:text="Enter your Number"
+                        android:textSize="15dp"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/ET_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/grey_light_secondary"
+                        android:fontFamily="@font/robotomedium"
+                        android:hint="@string/contact_hint"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black" />
+                </LinearLayout>
+
+
                 <TextView
                     android:layout_width="match_parent"
 
@@ -152,35 +201,36 @@
                     android:textSize="15dp"
                     android:textStyle="normal" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:background="@color/grey_light_secondary"
 
-                    android:layout_marginVertical="10dp"
-                    android:orientation="horizontal">
-
+                    <TextView
+                        android:id="@+id/selectlanguage_TV"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:background="@color/grey_light_secondary"
+                        android:fontFamily="@font/robotomedium"
+                        android:text="Select Language"
+                        android:padding="10dp"
+                        android:textSize="18sp"
+                        android:textColorHint="@color/black" />
+<!--
 
                     <Spinner
+                        android:id="@+id/language_Spinner"
                         android:layout_width="match_parent"
-
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="10dp"
                         android:entries="@array/spinner_Langage"
                         android:spinnerMode="dropdown"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
-
                         android:theme="@style/ThemeOverlay.AppCompat.Light">
 
-
-                        <requestFocus />
-
-
                     </Spinner>
+-->
 
 
-                </LinearLayout>
 
             </LinearLayout>
 

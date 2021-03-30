@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class Customdialog {
 
         TextView des = view.findViewById(R.id.message);
 
-      title.setText(titlee);
+        title.setText(titlee);
         des.setText(dess);
         read_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,10 +58,33 @@ public class Customdialog {
         alertDialog.show();
     }
 
+    public void Mocktestdialog(String titlee, String dess, int image) {
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.mocktestdialog, null);
+        AlertDialog alertDialog = new AlertDialog.Builder(context)
+                .setView(view)
+                //.setCancelable(false)
+                .create();
+
+        // alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        LinearLayout mockLL = view.findViewById(R.id.mockLL);
+      //  mockLL.setAlpha((float) 0.4);
+        TextView title = view.findViewById(R.id.title);
+        ImageView imageView = view.findViewById(R.id.image);
+        TextView des = view.findViewById(R.id.description);
+
+        title.setText(titlee);
+        des.setText(dess);
+        imageView.setImageResource(image);
+
+
+        alertDialog.show();
+    }
+
     public void ShowLanguage() {
 
         LayoutInflater inflater = LayoutInflater.from(context);
-
         BottomSheetDialog dialog = new BottomSheetDialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         View view = inflater.inflate(R.layout.languagedialog, null);
@@ -90,7 +114,7 @@ public class Customdialog {
         Hindi_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Hindi_TV.setTypeface(Hindi_TV.getTypeface(), Typeface.BOLD);
+                Hindi_TV.setTypeface(Hindi_TV.getTypeface(), Typeface.BOLD);
                 Hindi_TV.setTextColor(Color.parseColor("#ff0000"));
 
                 Toast.makeText(context, Hindi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();

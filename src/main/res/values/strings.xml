@@ -24,9 +24,9 @@
     <string name="noconnection">Kindly connect to a WIFI network or enable Mobile Data</string>
     <string name="continue_with_google">Continue with google</string>
     <string name="contact_hint">+61 XXX XX XXXX</string>
-    <string name="enter_mobile_number_to_sent_6_digit_verification_code">Enter mobile number to sent 6 digit verification code.</string>
+    <string name="enter_mobile_number_to_sent_6_digit_verification_code">Signup to Englishwise with your mobile number or email address to get a verification code.</string>
     <string name="otp_verification">OTP Verification</string>
-    <string name="enter_the_6_digit_otp_received_on_your_mobile_number">Enter the 6 digit OTP received on your mobile number</string>
+    <string name="enter_the_6_digit_otp_received_on_your_mobile_number">Enter the OTP Verification Code to verify your identity.</string>
     <string name="resent_otp">Resent OTP</string>
     <string name="profile">Profile</string>
     <string name="action_text">OK</string>
@@ -51,12 +51,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_1_pte_naati_ccl"><![CDATA[NO. 1 PTE & NAATI CCL]]></string>
     <string name="institute_inaustralia">Institute inAustralia</string>
-    <string name="the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level">The Credentialed Community Language Test (CCL) is an assessment of you languages abilities at a community level</string>
+    <string name="the_credentialed_community_language_test_ccl_is_an_assessment_of_you_languages_abilities_at_a_community_level">The Credentialed Community Language Test (CCL) is an assessment of your lingual abilities at a community level.</string>
     <string name="naati_languages">NAATI  LANGUAGES</string>
     <string name="useful_resources">USEFUL RESOURCES</string>
     <string name="online_coaching"><![CDATA[online coaching course & classes]]></string>
     <string name="ccl_coaching">CCL Coaching</string>
     <string name="no_course_available">No course available for Urdu Language</string>
+    <string name="create_your_profile_by_filling_in_the_credentials">Create your profile by filling-in the credentials.</string>
+    <string name="vocabulary">In Vocabulary section get your hands on common and topic wise vocab.</string>
+    <string name="ebooks">E-book section allows you to get access to free books related to your course</string>
+    <string name="video">Video section helps you with CCL Video tutorials</string>
 
 
     <style name="MenuItemParent">

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -17,8 +18,10 @@ import com.englishwise.naaticclenglishwise.Fragment.CoachingFragment;
 import com.englishwise.naaticclenglishwise.Fragment.HomeFragment;
 import com.englishwise.naaticclenglishwise.Fragment.MoreFragment;
 import com.englishwise.naaticclenglishwise.Fragment.SetTestFragment;
+import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 import com.englishwise.naaticclenglishwise.util.util;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.irozon.sneaker.Sneaker;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,10 +51,25 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottomNavigation);
         MeowBottomNavigation();
 
+        Sneaker.with(this)
+                .setTitle("Hello ! \n"+SharedPrefManager.getInstans(getApplicationContext()).getfullname())
+                .setMessage("")
+                .sneakSuccess();
+
+        Log.e("user",        SharedPrefManager.getInstans(getApplicationContext()).getNumber()+
+                SharedPrefManager.getInstans(getApplicationContext()).getemail()+
+                SharedPrefManager.getInstans(getApplicationContext()).getfullname()+
+                SharedPrefManager.getInstans(getApplicationContext()).getlanguage()+
+                SharedPrefManager.getInstans(getApplicationContext()).getprofileImage()+
+                SharedPrefManager.getInstans(getApplicationContext()).getUserId()
+
+
+        );
 
     }
 
     public void MeowBottomNavigation() {
+
         final Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_home));
@@ -66,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 id = item.getId();
-                Toast.makeText(MainActivity.this, "clicked item : " + item.getId(), Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(MainActivity.this, "clicked item : " + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
 
         bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(MainActivity.this, "showing item : " + item.getId(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "showing item : " + item.getId(), Toast.LENGTH_SHORT).show();
 
                 String name;
                 switch (item.getId()) {
@@ -125,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
-                Toast.makeText(MainActivity.this, "reselected item : " + item.getId(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "reselected item : " + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
 

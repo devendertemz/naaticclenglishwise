@@ -6,7 +6,6 @@
 
     android:background="@color/red"
     android:gravity="bottom"
-
     android:orientation="vertical">
 
 

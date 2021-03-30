@@ -72,7 +72,7 @@ public class MoreFragment extends Fragment {
     private void initView(View view) {
         final Vibrator vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         customdialog = new Customdialog(getContext());
-     vocabulary_LL = view.findViewById(R.id.Vocabulary_LL);
+        vocabulary_LL = view.findViewById(R.id.Vocabulary_LL);
          edit_profile_LL = view.findViewById(R.id.edit_profile_LL);
         language_IV = view.findViewById(R.id.language_IV);
         Ebooks_LL = view.findViewById(R.id.Ebooks_LL);

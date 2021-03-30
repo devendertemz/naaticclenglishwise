@@ -48,7 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/robotomedium"
-                android:text="Sign in"
+                android:padding="2dp"
+                android:text="Sign up"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -59,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/robotomedium"
+                android:padding="2dp"
                 android:text="@string/enter_mobile_number_to_sent_6_digit_verification_code"
                 android:textColor="@color/gray"
                 android:textSize="13dp"
@@ -122,6 +124,7 @@
                 android:text="Sign up"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
+
 
             <TextView
 

@@ -72,13 +72,14 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:padding="3dp"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Free books"
+                android:text="@string/ebooks"
                 android:textColor="@color/white"
-                android:textSize="18sp"
+                android:textSize="13sp"
                 android:textStyle="normal" />
         </LinearLayout>
         <LinearLayout

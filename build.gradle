@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.englishwise.naaticclenglishwise"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -64,7 +64,18 @@ dependencies {
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
     //StickyScrollView
     implementation 'com.github.amarjain07:StickyScrollView:1.0.2'
+    //sneaker
+    implementation 'com.irozon.sneaker:sneaker:2.0.0'
 
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //BubbleScrollBar
+    implementation 'com.github.Trendyol:BubbleScrollBar:0.1'
 
 
 }

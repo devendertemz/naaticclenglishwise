@@ -18,9 +18,11 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.englishwise.naaticclenglishwise.Fragment.TestFragment;
 import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.dialog.Customdialog;
 import com.englishwise.naaticclenglishwise.util.util;
 import com.google.android.material.tabs.TabLayout;
 
@@ -31,9 +33,12 @@ public class CCL_TestActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
 
+    LinearLayout CCl_Test_LL;
 
     ViewPager viewPager;
     Vibrator vibe;
+    Customdialog customdialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +47,21 @@ public class CCL_TestActivity extends AppCompatActivity {
         vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_page);
-
+        CCl_Test_LL=findViewById(R.id.CCl_Test_LL);
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("Test Format");
         arrayList.add("Test Marking");
         arrayList.add("How to Apply");
         tabLayout.setupWithViewPager(viewPager);
         prepareViewPager(viewPager, arrayList);
+        customdialog=new Customdialog(this);
+        CCl_Test_LL.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                customdialog.Mocktestdialog("Answer button","Click On the answer button to listen to prerecorded answer.",R.drawable.stories);
+            }
+        });
 
     }
 

@@ -72,13 +72,14 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:padding="3dp"
                     android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Common and topic wise vocab"
+                    android:text="@string/vocabulary"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="13sp"
                     android:textStyle="normal" />
             </LinearLayout>
 
@@ -89,11 +90,42 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/morebg"
                         android:orientation="vertical">
+                        <FrameLayout
+                            android:layout_marginTop="30dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/Vocabulary_RV"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:orientation="vertical"
+                                tools:itemCount="2"
+                                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                                tools:listitem="@layout/vocabulary_adapter_layout"/>
+
+                            <com.trendyol.bubblescrollbarlib.BubbleScrollBar
+                                android:id="@+id/fastscroll"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:orientation="vertical"
+                                app:bubbleBackground="@drawable/fast_scroll_thumb"
+                                app:thumbBackground="@color/red"
+                                app:scrollbarBackground="@color/darkWhite"
+                                app:bubbleTextSize="8sp"
+                                app:bubbleElevation="6dp"
+                                app:bubbleMargin="4dp"
+                                app:bubbleHeight="50dp"
+                                app:bubbleMinWidth="50dp"
+                                app:bubbleTextColor="@color/default_bubble_text_color"
+                                app:bubblePadding="4dp"/>
+                        </FrameLayout>
 
 
 
-
-                        <androidx.recyclerview.widget.RecyclerView
+                   <!--     <androidx.recyclerview.widget.RecyclerView
                             android:layout_marginTop="20dp"
 
                             android:id="@+id/RecyclerView_Vocabulary"
@@ -106,7 +138,7 @@
                             tools:listitem="@layout/vocabulary_adapter_layout">
 
                         </androidx.recyclerview.widget.RecyclerView>
-
+-->
 
 
 

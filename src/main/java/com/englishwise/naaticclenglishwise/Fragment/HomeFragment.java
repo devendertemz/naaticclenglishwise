@@ -121,14 +121,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Hindi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), Hindi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Tamil_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Tamil_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), Tamil_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -136,49 +136,49 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Urdu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), Urdu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Punjabi_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Punjabi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), Punjabi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Malayalam_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Malayalam_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), Malayalam_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Telugu_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Telugu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), Telugu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Nepaese_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Nepaese_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), Nepaese_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Gujarati_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Gujarati_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), Gujarati_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Spanish_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
