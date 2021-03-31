@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_gravity="center"
+        android:layout_margin="3dp"
+        android:background="@drawable/mocktestbg_curve"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/Tv_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Test Set-1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+
+                android:id="@+id/Tv_Date"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Valid till:17-Dec-2020"
+                android:textColor="@color/vocabulary"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <TextView
+                    android:id="@+id/Tv_Result"
+
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/buttoncurve"
+                    android:gravity="center"
+                    android:text="Result"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/VocabularyItemUnderline"
+           />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            tools:ignore="MissingConstraints">
+
+            <com.anychart.AnyChartView
+                android:id="@+id/ChartView"
+                android:padding="5dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginStart="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_margin="5dp"
+
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Dialogue 1"
+                        android:textColor="@color/vocabulary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="11/0"
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/Iv_Dialogue1"
+                            android:layout_gravity="center|right"
+                            android:layout_width="35dp"
+                            android:src="@drawable/ic_play_blue"
+                            android:layout_height="35dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center|right"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:text="Dialogue 1"
+                        android:textColor="@color/vocabulary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="11/0"
+                            android:textColor="@color/gradient_end_color"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/Iv_Dialogue2"
+
+                            android:layout_gravity="center|right"
+                            android:layout_width="35dp"
+                            android:src="@drawable/ic_play_blue"
+                            android:layout_height="35dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+

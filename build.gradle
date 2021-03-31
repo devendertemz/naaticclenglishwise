@@ -77,6 +77,8 @@ dependencies {
     //BubbleScrollBar
     implementation 'com.github.Trendyol:BubbleScrollBar:0.1'
 
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
 
 }
 
