@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content">
+        <SeekBar
+            android:visibility="gone"
+            android:id="@+id/seekbar"
+            style="@style/Base.Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           />
+        <TextView
+            android:id="@+id/TV_questionTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomedium"
+            android:gravity="left"
+
+            android:text="00"
+            android:textColor="@color/vocabulary"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/TV_questionTotalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotomedium"
+            android:gravity="left"
+
+            android:text="/14 sec"
+            android:textColor="@color/vocabulary"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+
+    </LinearLayout>
+
+
+    <com.ohoussein.playpause.PlayPauseView
+
+        android:id="@+id/play_pause_view"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:foreground="?android:selectableItemBackground"
+
+        app:fill_color="#e1e1e1"
+        app:pause_bg="@color/red"
+        app:play_bg="@color/gradient_end_color" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotomedium"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Audio ready to play"
+        android:textColor="@color/vocabulary"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/TV_questiondialog"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="20sp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/robotomedium"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="See Text"
+        android:textColor="@color/vocabulary"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

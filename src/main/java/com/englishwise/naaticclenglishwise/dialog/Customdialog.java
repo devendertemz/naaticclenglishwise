@@ -48,7 +48,7 @@ public class Customdialog {
             @Override
             public void onClick(View v) {
                 alertDialog.cancel();
-                ShowLanguage();
+               // ShowLanguage();
                 // Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
 
             }

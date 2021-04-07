@@ -79,6 +79,13 @@ dependencies {
 
     implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 
+        //playpauseview
+    implementation 'com.github.ohoussein.playpauseview:playpauseview:1.0.2'
+
+
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+
+
 
 }
 

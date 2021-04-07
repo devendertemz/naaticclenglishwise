@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.englishwise.naaticclenglishwise.Activity.MockTestActivity;
 import com.englishwise.naaticclenglishwise.Adapter.HomeVideoAdapter;
 import com.englishwise.naaticclenglishwise.Modal.videoModel;
 import com.englishwise.naaticclenglishwise.R;
@@ -178,6 +179,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
+                Intent in=new Intent(getActivity(), MockTestActivity.class);
+                startActivity(in);
                // Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });

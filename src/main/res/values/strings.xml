@@ -128,11 +128,19 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-
     <style name="RatingBar" paparent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorControlActivated">@color/blue_color</item>
         <item name="colorControlNormal">@color/gradient_end_color</item>
     </style>
     <!-- Dialog -->
+    <style name="TextAppearance.MyApp.Title.Expanded" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
+    <style name="TextAppearance.MyApp.Title.Collapsed" parent="android:TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

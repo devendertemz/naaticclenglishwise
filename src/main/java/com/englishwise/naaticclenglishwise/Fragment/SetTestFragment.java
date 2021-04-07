@@ -51,7 +51,7 @@ public class SetTestFragment extends Fragment implements   MockTestList_Adapter.
 
     private void initView(View view) {
         GetMockDetailssList=new ArrayList<>();
-        AboutIV=view.findViewById(R.id.AboutIV);
+        //AboutIV=view.findViewById(R.id.AboutIV);
         RV_MockTest=view.findViewById(R.id.RV_MockTest);
 
         GridLayoutManager manager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
@@ -63,12 +63,12 @@ public class SetTestFragment extends Fragment implements   MockTestList_Adapter.
 
         mockTestList_adapter = new MockTestList_Adapter(GetMockDetailssList,getContext());
         RV_MockTest.setAdapter(mockTestList_adapter);
-        AboutIV.setOnClickListener(new View.OnClickListener() {
+       /* AboutIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AboutNoice("Information about Mock test","A mock test is defined as an examination, which does not have any marks. The test will assist the student or the candidate to acquire an idea as to how it would look like in a real time frame. You can take a mock test on various subjects that include programming");
             }});
-
+*/
 
 
 
