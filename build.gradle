@@ -84,7 +84,9 @@ dependencies {
 
 
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+        //for checking update Apk on play store
 
+    implementation 'org.jsoup:jsoup:1.10.2'
 
 
 }

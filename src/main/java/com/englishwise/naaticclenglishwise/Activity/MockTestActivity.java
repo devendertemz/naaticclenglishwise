@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -78,6 +79,8 @@ public class MockTestActivity extends AppCompatActivity {
 
     // private TextView TV_VoiceRecodingTime,TV_voice_recordingTotalTime;
     private PlayPauseView VoiceReording_ppv;
+    ImageView IV_Finish;
+
 
 
     @Override
@@ -122,7 +125,7 @@ public class MockTestActivity extends AppCompatActivity {
         // imageView = (ImageView) findViewById(R.id.centerImage);
 
         timer = findViewById(R.id.record_timer);
-
+        IV_Finish= findViewById(R.id.IV_Finish);
 
         RecodingPlay_Layout = findViewById(R.id.RecodingPlay_Layout);
         VoiceReording_ppv = findViewById(R.id.VoiceReording_ppv);
@@ -136,6 +139,14 @@ public class MockTestActivity extends AppCompatActivity {
 
                     playingQuestion();
                 }
+
+            }
+        });
+        IV_Finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // initView();
+                StartQuestion();
 
             }
         });
@@ -163,6 +174,8 @@ public class MockTestActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
 
@@ -205,6 +218,7 @@ public class MockTestActivity extends AppCompatActivity {
             */
             }
         });
+
     }
 
 
@@ -271,7 +285,7 @@ public class MockTestActivity extends AppCompatActivity {
 
 
         try {
-            mediaPlayer.setDataSource("http://misfitamigos.com/naticcl_englishwise/mock_test_data/hindi/answers/Aged_care/Aged_Care_Centre_Hindi_2.mp3");
+            mediaPlayer.setDataSource("http://misfitamigos.com/naticcl_englishwise/mock_test_data/hindi/questions/Aged_care/Aged_Care_Centre_Hindi_1.mp3");
             mediaPlayer.prepare();
             TV_questionTotalTime.setText("/" + milisecondTotime(mediaPlayer.getDuration()) + " Sec");
             Log.d("musicPlayerTimehere", String.valueOf(mediaPlayer.getDuration()));
@@ -430,6 +444,7 @@ public class MockTestActivity extends AppCompatActivity {
             //playRecord.setEnabled(false);
             //Stopplay.setEnabled(false);
             Toast.makeText(this, "Recording....", Toast.LENGTH_SHORT).show();
+            startvoiceplay.setText("Recording is started");
 
 
         } else {
@@ -458,6 +473,7 @@ public class MockTestActivity extends AppCompatActivity {
         }
         mediaPlayerr.start();
         Toast.makeText(this, "Playing.......", Toast.LENGTH_SHORT).show();
+
         setAnswer_layout();
 
     }

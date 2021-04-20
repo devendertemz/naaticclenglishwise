@@ -108,6 +108,8 @@
                  <!--   <include layout="@layout/no_course_available" />-->
 
                     <LinearLayout
+
+                        android:id="@+id/LL_mocktestDemo"
                         style="@style/MenuItemParent"
                         android:background="?selectableItemBackground">
 
@@ -118,7 +120,7 @@
 
                         <TextView
                             style="@style/MenuItemLabel"
-                            android:text="Point Calculator" />
+                            android:text="Mock test Demo" />
 
                         <ImageView
                             style="@style/MenuItemArrow"

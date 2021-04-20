@@ -18,10 +18,13 @@ import com.englishwise.naaticclenglishwise.Fragment.CoachingFragment;
 import com.englishwise.naaticclenglishwise.Fragment.HomeFragment;
 import com.englishwise.naaticclenglishwise.Fragment.MoreFragment;
 import com.englishwise.naaticclenglishwise.Fragment.SetTestFragment;
+import com.englishwise.naaticclenglishwise.dialog.AppUpdateChecker;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 import com.englishwise.naaticclenglishwise.util.util;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.irozon.sneaker.Sneaker;
+
+import java.util.Calendar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -51,10 +54,41 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottomNavigation);
         MeowBottomNavigation();
 
-        Sneaker.with(this)
-                .setTitle("Hello ! \n"+SharedPrefManager.getInstans(getApplicationContext()).getfullname())
-                .setMessage("")
-                .sneakSuccess();
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+        if(timeOfDay >= 0 && timeOfDay < 12){
+            //Toast.makeText(this, "Good Morning", Toast.LENGTH_SHORT).show();
+            Sneaker.with(this)
+                    .setTitle("Hi ! \n "+SharedPrefManager.getInstans(getApplicationContext()).getfullname()+" \n Good Morning ")
+                    .setMessage("")
+                    .sneakSuccess();
+        }else if(timeOfDay >= 12 && timeOfDay < 16){
+
+            Sneaker.with(this)
+                    .setTitle("Hi ! \n "+SharedPrefManager.getInstans(getApplicationContext()).getfullname()+" \n Good Afternoon ")
+                    .setMessage("")
+                    .sneakSuccess();
+
+           // Toast.makeText(this, "Good Afternoon", Toast.LENGTH_SHORT).show();
+        }else if(timeOfDay >= 16 && timeOfDay < 21){
+           // Toast.makeText(this, "Good Evening", Toast.LENGTH_SHORT).show();
+            Sneaker.with(this)
+                    .setTitle("Hi ! \n "+SharedPrefManager.getInstans(getApplicationContext()).getfullname()+" \n Good Evening ")
+                    .setMessage("")
+                    .sneakSuccess();
+
+        }else if(timeOfDay >= 21 && timeOfDay < 24){
+
+
+            Sneaker.with(this)
+                    .setTitle("Hi ! \n "+SharedPrefManager.getInstans(getApplicationContext()).getfullname()+" \n Good Night ")
+                    .setMessage("")
+                    .sneakSuccess();
+           // Toast.makeText(this, "Good Night", Toast.LENGTH_SHORT).show();
+        }
+
+
 
         Log.e("user",        SharedPrefManager.getInstans(getApplicationContext()).getNumber()+
                 SharedPrefManager.getInstans(getApplicationContext()).getemail()+
@@ -65,6 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         );
+
+        AppUpdateChecker appUpdateChecker=new AppUpdateChecker(this);  //pass the activity in constructure
+        appUpdateChecker.checkForUpdate(false); //mannual check false here
 
     }
 

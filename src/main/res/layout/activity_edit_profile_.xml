@@ -152,6 +152,8 @@
                         android:text="Enter your name" />
 
                     <EditText
+                        android:id="@+id/Ed_Name"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -172,9 +174,10 @@
                         android:layout_marginLeft="26dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
-                        android:text="Enter your email" />
+                        android:text=" Your email " />
 
                     <TextView
+                        android:id="@+id/Tv_Email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -197,9 +200,11 @@
                         android:layout_marginLeft="26dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
-                        android:text="Enter your phone" />
+                        android:text=" Your phone number" />
 
                     <TextView
+
+                        android:id="@+id/TV_Number"
                         android:layout_width="match_parent"
 
                         android:layout_height="wrap_content"
@@ -208,6 +213,35 @@
                         android:background="@color/white"
                         android:fontFamily="@font/opensans_bold"
                         android:hint="+91-8287018255"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <View style="@style/MenuItemUnderline" />
+
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:text="Selected Language" />
+
+                    <TextView
+
+                        android:id="@+id/Tv_Language"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/white"
+                        android:fontFamily="@font/opensans_bold"
+                        android:hint="Hindi"
                         android:padding="10dp"
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"

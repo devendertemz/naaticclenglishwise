@@ -55,8 +55,12 @@ public class VocabularyActivity extends AppCompatActivity {
         loadingDialogs = new LoadingDialogs(this);
         mDataaaaaaaaa= new ArrayList<>();
         Vocabulary_RV = findViewById(R.id.Vocabulary_RV);
+
         GridLayoutManager manager = new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false);
         Vocabulary_RV.setLayoutManager(manager);
+
+        fastscroll = findViewById(R.id.fastscroll);
+
         read_vocabulary();
 
 /*
@@ -112,20 +116,24 @@ public class VocabularyActivity extends AppCompatActivity {
                             mDataaaaaaaaa.add(new VocabularyModel(english_word,translated_word));
 
 
+                            vocabulary_adapterrrrrr = new Vocabulary_Adapterr(VocabularyActivity.this, mDataaaaaaaaa);
+                            Vocabulary_RV.setAdapter(vocabulary_adapterrrrrr);
+
+                            fastscroll.attachToRecyclerView(Vocabulary_RV);
+                            fastscroll.getBubbleTextProvider();
+
+                            fastscroll.setBubbleTextProvider(new BubbleTextProvider() {
+                                @Override
+                                public String provideBubbleText(int i) {
+                                    //return "jhk";
+                        return vocabulary_adapterrrrrr.mData.get(i).getSuportedWord().substring(0,1);
+                                   // return mDataaaaaaaaa.get(i).getEnglis().substring(0,1);
+
+                                }
+                            });
+
 
                         }
-
-                        vocabulary_adapterrrrrr = new Vocabulary_Adapterr(VocabularyActivity.this, mDataaaaaaaaa);
-                        Vocabulary_RV.setAdapter(vocabulary_adapterrrrrr);
-                        fastscroll = findViewById(R.id.fastscroll);
-
-                        fastscroll.attachToRecyclerView(Vocabulary_RV);
-                        fastscroll.setBubbleTextProvider(new BubbleTextProvider() {
-                            @Override
-                            public String provideBubbleText(int i) {
-                                return vocabulary_adapterrrrrr.mData.get(i).getEnglis().substring(0,1);
-                            }
-                        });
 
                         loadingDialogs.dismissDialog();
 

@@ -82,7 +82,7 @@ public class MoreFragment extends Fragment {
         Rate_App_LL = view.findViewById(R.id.Rate_App_LL);
         Blog_LL = view.findViewById(R.id.Blog_LL);
 
-        customdialog.Sucess("Change language", "Once you change the language,you will lost all the current data.Are you sure you want to change the language ?");
+        ///customdialog.Sucess("Change language", "Once you change the language,you will lost all the current data.Are you sure you want to change the language ?");
 
         Videos_LL.setOnClickListener(new View.OnClickListener() {
             @Override

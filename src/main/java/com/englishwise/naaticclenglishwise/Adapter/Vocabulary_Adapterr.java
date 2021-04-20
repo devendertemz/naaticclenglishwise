@@ -33,6 +33,8 @@ public class Vocabulary_Adapterr extends RecyclerView.Adapter<Vocabulary_Adapter
 
         View layout;
         layout = LayoutInflater.from(mContext).inflate(R.layout.vocabulary_adapter_layout, parent, false);
+
+
         return new Vocabulary_Adapterr.MyViewHolder(layout);
     }
 
