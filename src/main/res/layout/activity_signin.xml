@@ -74,12 +74,13 @@
                 android:weightSum="5">
 
                 <ImageView
+                    android:src="@drawable/australia1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/australia1"
+                    android:scaleType="centerCrop"
                     android:gravity="center"
 
                     />
@@ -95,6 +96,7 @@
                     app:ccp_defaultNameCode="AU" />
 
                 <EditText
+                    android:background="@android:drawable/editbox_background"
                     android:id="@+id/number"
                     android:layout_width="0dp"
                     android:layout_height="50dp"

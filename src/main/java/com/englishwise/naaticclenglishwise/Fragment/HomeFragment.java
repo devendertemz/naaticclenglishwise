@@ -179,8 +179,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Intent in=new Intent(getActivity(), MockTestActivity.class);
-                startActivity(in);
+              /*  Intent in=new Intent(getActivity(), MockTestActivity.class);
+                startActivity(in);*/
                // Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });

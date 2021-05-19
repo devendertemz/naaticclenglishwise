@@ -1,7 +1,6 @@
 package com.englishwise.naaticclenglishwise.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.text.HtmlCompat;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -11,15 +10,10 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.MainActivity;
-import com.englishwise.naaticclenglishwise.ModalResponse.Generate_otp;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
 import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
@@ -30,18 +24,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
-import com.irozon.sneaker.Sneaker;
 import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -63,9 +54,7 @@ public class SigninActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+
         setContentView(R.layout.activity_signin);
         util.blackiteamstatusbar(this, R.color.white);
         Tv_Continue = findViewById(R.id.continue_tv);
@@ -113,6 +102,7 @@ public class SigninActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
+                            Log.e("failure", response.message());
                             Toast.makeText(SigninActivity.this, response.code() + "", Toast.LENGTH_SHORT).show();
                             String s = null;
 

@@ -6,7 +6,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
+/*
     private static final String BASE_URL = "http://misfitamigos.com/naticcl_englishwise/";
+*/
+    private static final String BASE_URL = "https://misfitamigos.com/naticcl_api/";
+
 
     private static Retrofit getRetrofit(){
 

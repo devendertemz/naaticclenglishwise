@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.englishwise.naaticclenglishwise"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -20,8 +20,15 @@ android {
 
     buildTypes {
         release {
+            shrinkResources false
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            shrinkResources false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -29,7 +36,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -77,7 +83,7 @@ dependencies {
     //BubbleScrollBar
     implementation 'com.github.Trendyol:BubbleScrollBar:0.1'
 
-    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+   // implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 
         //playpauseview
     implementation 'com.github.ohoussein.playpauseview:playpauseview:1.0.2'
@@ -87,6 +93,8 @@ dependencies {
         //for checking update Apk on play store
 
     implementation 'org.jsoup:jsoup:1.10.2'
+
+
 
 
 }

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.IntroActivity"
-    android:background="#ffffff">
-
+    android:background="#ffffff"
+    tools:context=".Activity.IntroActivity">
 
 
     <androidx.viewpager.widget.ViewPager
@@ -18,42 +16,43 @@
         app:layout_constraintBottom_toTopOf="@+id/tab_indicator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"  >
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.viewpager.widget.ViewPager>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_next"
+        style="@style/RegistrationFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="16dp"
         app:backgroundTint="@color/colorRed"
-        style="@style/RegistrationFAB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:rippleColor="@color/white"
         app:srcCompat="@drawable/ic_arrow"
+        app:tint="@android:color/white"
+        tools:ignore="ContentDescription" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"    />
 
-
-<!--
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="16dp"
-        android:background="#fff"
-        android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
-        android:drawableTint="@color/darkWhite"
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"  />
--->
+    <!--
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="#fff"
+            android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
+            android:drawableTint="@color/darkWhite"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"  />
+    -->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_indicator"
@@ -71,8 +70,8 @@
         app:tabBackground="@drawable/indicator_selector">
 
     </com.google.android.material.tabs.TabLayout>
+
     <Button
-        android:visibility="invisible"
         android:id="@+id/btn_get_started"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
@@ -84,14 +83,12 @@
         android:background="@drawable/btn_gradient_style"
         android:text="@string/get_Started"
         android:textColor="#fff"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:id="@+id/tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,9 +96,11 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="Skip"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

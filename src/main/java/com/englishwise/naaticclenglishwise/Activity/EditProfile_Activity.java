@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
-import com.englishwise.naaticclenglishwise.util.util;
 
 public class EditProfile_Activity extends AppCompatActivity {
 
@@ -27,7 +24,7 @@ public class EditProfile_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile_);
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
+        //util.blackiteamstatusbar(this, R.color.gradient_end_color);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         InitView();
 

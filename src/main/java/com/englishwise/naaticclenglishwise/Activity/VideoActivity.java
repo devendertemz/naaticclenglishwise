@@ -30,7 +30,7 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
+     //   util.blackiteamstatusbar(this, R.color.gradient_end_color);
         vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         initView();
 

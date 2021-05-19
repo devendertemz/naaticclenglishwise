@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="70dp"
     android:background="#27386C"
+
     android:orientation="vertical"
     app:stickyHeader="@+id/titleLayout"
     tools:context=".Fragment.SetTestFragment">
@@ -95,6 +95,7 @@
             </LinearLayout>
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/morebg"
@@ -111,9 +112,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="5dp"
                     android:orientation="vertical"
-                    tools:itemCount="3"
+                    tools:itemCount="10"
                     tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    tools:listitem="@layout/mocklist_adapter_layout" />
+                    tools:listitem="@layout/listmocktestadapter" />
 
             </LinearLayout>
         </LinearLayout>

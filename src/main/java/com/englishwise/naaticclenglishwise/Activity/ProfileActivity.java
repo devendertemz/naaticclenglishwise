@@ -15,23 +15,17 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
-import com.englishwise.naaticclenglishwise.dialog.Customdialog;
 import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 import com.englishwise.naaticclenglishwise.storage.User_login;
@@ -43,9 +37,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.jar.Attributes;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -64,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
     LinearLayout LL_number, LL_Email;
     //  Spinner language_Spinner;
     LoadingDialogs loadingDialogs;
-    String Language;
+    String Language="Select Language";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +66,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+
+    /*    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);*/
         setContentView(R.layout.activity_profile);
         util.blackiteamstatusbar(this, R.color.white);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -105,7 +97,8 @@ public class ProfileActivity extends AppCompatActivity {
         selectlanguage_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sucess("Change language", "Once you change the language,you will lost all the current data.Are you sure you want to change the language ?");
+              //  Sucess("Change language", "All the current data will be lost on changing the language. Do you still want to proceed?");
+                ShowLanguage();
 
             }
         });
@@ -163,7 +156,7 @@ public class ProfileActivity extends AppCompatActivity {
         vibe.vibrate(50);
         String name = ET_Name.getText().toString().trim();
         String email = ET_Email.getText().toString().trim();
-       // String Language = selectlanguage_TV.getText().toString().trim();
+        // String Language = selectlanguage_TV.getText().toString().trim();
         String Number = ET_number.getText().toString().trim();
 
         if (name.isEmpty()) {
@@ -295,19 +288,15 @@ public class ProfileActivity extends AppCompatActivity {
         BottomSheetDialog dialog = new BottomSheetDialog(this);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         View view = inflater.inflate(R.layout.languagedialog, null);
-
         ImageView cancel_Iv;
-        TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV;
+        TextView Hindi_TV, Punjabi_TV, Telugu_TV, Nepaese_TV, Spanish_TV;
 
         cancel_Iv = view.findViewById(R.id.cancel_Iv);
         Hindi_TV = view.findViewById(R.id.Hindi_TV);
-        Tamil_TV = view.findViewById(R.id.Tamil_TV);
-        Urdu_TV = view.findViewById(R.id.Urdu_TV);
+
         Punjabi_TV = view.findViewById(R.id.Punjabi_TV);
-        Malayalam_TV = view.findViewById(R.id.Malayalam_TV);
         Telugu_TV = view.findViewById(R.id.Telugu_TV);
         Nepaese_TV = view.findViewById(R.id.Nepaese_TV);
-        Gujarati_TV = view.findViewById(R.id.Gujarati_TV);
         Spanish_TV = view.findViewById(R.id.Spanish_TV);
 
         cancel_Iv.setOnClickListener(new View.OnClickListener() {
@@ -329,47 +318,19 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        Tamil_TV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Tamil_TV.setTypeface(Hindi_TV.getTypeface(), Typeface.BOLD);
-                Tamil_TV.setTextColor(Color.parseColor("#ff0000"));
-                selectlanguage_TV.setText(Tamil_TV.getText().toString());
-                Language = "ta";
 
-                dialog.cancel();
 
-            }
-        });
-        Urdu_TV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectlanguage_TV.setText(Urdu_TV.getText().toString());
-                Language = "ur";
-                dialog.cancel();
-
-            }
-        });
         Punjabi_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectlanguage_TV.setText(Punjabi_TV.getText().toString());
-                //Language="ur";
+                Language = "pa";
 
                 dialog.cancel();
 
             }
         });
-        Malayalam_TV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectlanguage_TV.setText(Malayalam_TV.getText().toString());
-                Language = "ml";
 
-                dialog.cancel();
-
-            }
-        });
         Telugu_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -386,16 +347,6 @@ public class ProfileActivity extends AppCompatActivity {
                 selectlanguage_TV.setText(Nepaese_TV.getText().toString());
 
                 Language = "ne";
-                dialog.cancel();
-
-            }
-        });
-        Gujarati_TV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectlanguage_TV.setText(Gujarati_TV.getText().toString());
-                Language = "gu";
-
                 dialog.cancel();
 
             }

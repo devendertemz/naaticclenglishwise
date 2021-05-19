@@ -50,7 +50,7 @@
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <TextView
+     <!--   <TextView
             android:id="@+id/Tamil_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,8 +61,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp" />
-
-        <TextView
+-->
+       <!-- <TextView
             android:id="@+id/Urdu_TV"
 
             android:layout_width="match_parent"
@@ -74,7 +74,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp" />
-
+-->
         <TextView
             android:id="@+id/Punjabi_TV"
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <TextView
+    <!--    <TextView
             android:id="@+id/Malayalam_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp" />
-
+-->
         <TextView
             android:id="@+id/Telugu_TV"
             android:layout_width="match_parent"
@@ -119,6 +119,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp" />
+<!--
 
         <TextView
             android:id="@+id/Gujarati_TV"
@@ -130,6 +131,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/white"
             android:textSize="16sp" />
+-->
 
         <TextView
             android:id="@+id/Spanish_TV"

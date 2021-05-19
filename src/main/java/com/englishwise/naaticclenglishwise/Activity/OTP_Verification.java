@@ -8,14 +8,11 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.chaos.view.PinView;
-import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
 import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
@@ -44,9 +41,10 @@ public class OTP_Verification extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);*/
         setContentView(R.layout.activity_o_t_p__verification);
 
         util.blackiteamstatusbar(this, R.color.white);

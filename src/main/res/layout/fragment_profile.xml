@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="80dp"
     android:background="#27386C"
     android:orientation="vertical"
     tools:context=".Fragment.MoreFragment">
@@ -12,8 +11,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
         android:orientation="horizontal">
 
         <TextView
@@ -28,19 +27,27 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />
-
-        <ImageView
+<!--
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/language_IV"
-            android:layout_width="wrap_content"
+            android:layout_width="31dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
+
             android:padding="3dp"
             android:src="@drawable/globe"
-            app:tint="@color/white"
-            tools:ignore="RtlHardcoded">
+            app:tint="@color/white" />-->
+        <!--<ImageView
+                    android:id="@+id/language_IV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250dp"
+                    android:padding="3dp"
+                    android:src="@drawable/globe"
+                    app:tint="@color/white"
+                    tools:ignore="RtlHardcoded">
 
-        </ImageView>
-
+                </ImageView>
+        -->
 
     </LinearLayout>
 
@@ -66,78 +73,68 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:gravity="center|left"
+                    android:layout_gravity="center"
 
                     android:orientation="horizontal"
                     tools:ignore="RtlHardcoded">
 
-                    <FrameLayout
-                        android:id="@+id/Opengallery"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
 
-                        android:background="@drawable/dotted">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/iv_profile_photo"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
 
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile"
+                        android:visibility="visible"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="2dp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:src="@drawable/circlelayout"
-                            android:visibility="visible" />
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-
-                            android:id="@+id/iv_profile_photo"
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/profile"
-                            android:visibility="visible"
-                            app:civ_border_color="@color/white"
-                            app:civ_border_width="2dp" />
-
-
-                    </FrameLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_margin="18sp"
                         android:orientation="vertical"
 
                         android:padding="5dp">
 
                         <TextView
+
+                            android:id="@+id/name"
+                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="left"
                             android:text="Devender Singh"
                             android:textColor="@color/white"
-                            android:textSize="18dp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/email"
                             android:layout_width="match_parent"
+                            android:gravity="center"
 
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="left"
                             android:text="devendertemz@gmail.com"
                             android:textColor="@color/white"
-                            android:textSize="15dp"
+                            android:textSize="13sp"
                             android:textStyle="bold" />
 
 
                     </LinearLayout>
 
+
                     <LinearLayout
+
                         android:id="@+id/edit_profile_LL"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+
+                        android:layout_gravity="center"
                         android:layout_margin="10dp"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:padding="5dp">
 
@@ -195,113 +192,176 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/Vocabulary_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/vocabulary"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            android:id="@+id/Vocabulary_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Vocabulary" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                android:src="@drawable/vocabulary"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Vocabulary" />
 
-                    <View style="@style/MenuItemUnderline" />
-
-
-
-                    <LinearLayout
-                        android:id="@+id/Ebooks_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Ebooks" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
-
-                    <View style="@style/MenuItemUnderline" />
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <!--</
+                                        <View style="@style/MenuItemUnderline" />
+                    -->
 
 
-                    <LinearLayout
-                        android:id="@+id/Blog_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            android:id="@+id/Ebooks_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Blogs" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/e_book"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Ebooks" />
 
-                    <View style="@style/MenuItemUnderline" />
-
-
-                    <LinearLayout
-                        android:id="@+id/Videos_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Videos" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
                     <View style="@style/MenuItemUnderline" />
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                    <LinearLayout
-                        android:id="@+id/CCl_Test_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                        <LinearLayout
+                            android:id="@+id/Blog_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/blogs"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="CCL Test" />
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Blogs" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View style="@style/MenuItemUnderline" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/Videos_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
+
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/video"
+                                tools:ignore="VectorDrawableCompat" />
+
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Videos" />
+
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View style="@style/MenuItemUnderline" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/CCl_Test_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
+
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/ccl_test"
+                                tools:ignore="VectorDrawableCompat" />
+
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="CCL Test" />
+
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <View style="@style/MenuItemUnderline" />
 
 
@@ -340,65 +400,102 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Point Calculator" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/point_calculator"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Point Calculator" />
 
-                    <View style="@style/MenuItemUnderline" />
-
-
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Check My Visa" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
                     <View style="@style/MenuItemUnderline" />
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                        <LinearLayout
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/check_visa"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Get My Policy" />
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Check My Visa" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View style="@style/MenuItemUnderline" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
+
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/ic_more"
+                                tools:ignore="VectorDrawableCompat" />
+
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Get My Policy" />
+
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <View style="@style/MenuItemUnderline" />
 
 
@@ -437,72 +534,106 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Feedback" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/feedback"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Feedback" />
 
-                    <View style="@style/MenuItemUnderline" />
-
-
-                    <LinearLayout
-                        android:id="@+id/Share_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Share App" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
-
-                    <View style="@style/MenuItemUnderline" />
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
 
-                    <LinearLayout
-                        android:id="@+id/Rate_App_LL"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            android:id="@+id/Share_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Rate App" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/shareapp"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Share App" />
 
-                    <View style="@style/MenuItemUnderline" />
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/Rate_App_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
+
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/rateapp"
+                                tools:ignore="VectorDrawableCompat" />
+
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Rate App" />
+
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -536,72 +667,79 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Support" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
 
                     <View style="@style/MenuItemUnderline" />
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                    <LinearLayout
+                        <LinearLayout
 
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                            android:id="@+id/ContactUs_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/contact_us"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Contact Us" />
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Contact Us" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
-
-                    <View style="@style/MenuItemUnderline" />
-
-
-                    <LinearLayout
-
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="FAQs" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
                     <View style="@style/MenuItemUnderline" />
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
+
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/ic_more"
+                                tools:ignore="VectorDrawableCompat" />
+
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="FAQs" />
+
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -635,70 +773,102 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                        <LinearLayout
+                            android:id="@+id/Facebook_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Facebook" />
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/facebook"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Facebook" />
 
-                    <View style="@style/MenuItemUnderline" />
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
-                    <LinearLayout
+                        <LinearLayout
+                            android:id="@+id/you_Tube_LL"
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/ic_youtube1"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="YouTube" />
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Telegram" />
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
 
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <View style="@style/MenuItemUnderline" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10sp"
+                        android:padding="8dp"
+                        app:cardBackgroundColor="@color/darkWhite"
+                        app:cardCornerRadius="8sp"
+                        app:cardElevation="10dp">
 
+                        <LinearLayout
+                            android:id="@+id/Instagram_LL"
 
-                    <LinearLayout
+                            style="@style/MenuItemParent"
+                            android:background="?selectableItemBackground">
 
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
+                            <ImageView
+                                style="@style/MenuItemImage"
+                                app:srcCompat="@drawable/instagram"
+                                tools:ignore="VectorDrawableCompat" />
 
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
+                            <TextView
+                                style="@style/MenuItemLabel"
+                                android:text="Instagram" />
 
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Instagram" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
-
-                    <View style="@style/MenuItemUnderline" />
-
+                            <ImageView
+                                style="@style/MenuItemArrow"
+                                app:srcCompat="@drawable/ic_toolbar_back" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>

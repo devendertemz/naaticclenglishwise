@@ -11,6 +11,7 @@
     tools:context=".Activity.EditProfile_Activity">
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -158,10 +159,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:background="@color/white"
+                        android:background="@android:drawable/editbox_background"
                         android:fontFamily="@font/opensans_bold"
                         android:hint="Devender Singh"
                         android:padding="10dp"
+
                         android:textColor="@color/black"
                         android:textColorHint="@color/black"
                         android:textStyle="bold" />
@@ -177,12 +179,13 @@
                         android:text=" Your email " />
 
                     <TextView
+                        android:background="@android:drawable/editbox_background"
+
                         android:id="@+id/Tv_Email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:background="@color/white"
                         android:fontFamily="@font/opensans_bold"
                         android:hint="devendertemz@gmail.com"
                         android:padding="10dp"
@@ -210,7 +213,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:background="@color/white"
+                        android:background="@android:drawable/editbox_background"
                         android:fontFamily="@font/opensans_bold"
                         android:hint="+91-8287018255"
                         android:padding="10dp"
@@ -239,7 +242,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:background="@color/white"
+                        android:background="@android:drawable/editbox_background"
                         android:fontFamily="@font/opensans_bold"
                         android:hint="Hindi"
                         android:padding="10dp"
@@ -284,6 +287,8 @@
                         app:backgroundTint="@color/gradient_end_color"
                         android:tint="@color/white"
                         style="@style/RegistrationFAB"
+                        app:tint="@android:color/white"
+
                         app:rippleColor="@color/white"
                         app:srcCompat="@drawable/ic_arrow"
                         android:onClick="OnClick_SubmitProfile"

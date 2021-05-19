@@ -1,4 +1,4 @@
-package com.englishwise.naaticclenglishwise;
+package com.englishwise.naaticclenglishwise.util;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.view.View;
 
+import com.englishwise.naaticclenglishwise.R;
 import com.geniusforapp.fancydialog.FancyAlertDialog;
 
 

@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="white2">#EBEBEB</color>
     <color name="background">#FFFFFFFF</color>
     <color name="darkWhite">#cfd8dc</color>
     <color name="tab_indicator_gray">#c0c0c0</color>
@@ -29,4 +30,19 @@
     <color name="vocabulary">#696969</color>
     <color name="lightwhite">#A2A7AB</color>
 
+    <color name="LIGHT_sadow">#3E4B75</color>
+
+    <color name="dark_shadow">#021961</color>
+
+
+
+    <color name="primary">#A3858F</color>
+    <color name="primary_text">#676767</color>
+    <color name="secondry_text">#212121</color>
+    <color name="dark_shadow2">#C5C5C5</color>
+    <color name="LIGHT_sadow2">#FFFFFF</color>
+
+    <color name="bgcolor">#F6F6F6</color>
+    <!--
+    F8F8F8-->
 </resources>

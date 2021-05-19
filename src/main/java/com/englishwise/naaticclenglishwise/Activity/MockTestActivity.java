@@ -1,10 +1,5 @@
 package com.englishwise.naaticclenglishwise.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,31 +8,42 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.R;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import com.englishwise.naaticclenglishwise.Adapter.MockTestList_Adapter;
+import com.englishwise.naaticclenglishwise.ModalResponse.PracticetestRepo;
+import com.englishwise.naaticclenglishwise.R;
+import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
 import com.englishwise.naaticclenglishwise.dialog.Customdialog;
+import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
 import com.englishwise.naaticclenglishwise.util.util;
 import com.ohoussein.playpause.PlayPauseView;
 import com.skyfishjy.library.RippleBackground;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.UUID;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MockTestActivity extends AppCompatActivity {
@@ -47,11 +53,9 @@ public class MockTestActivity extends AppCompatActivity {
     PlayPauseView view, answer_play_pause_view;
     public String count = "0", count_recorder = "0";
 
-    TextView TV_questiondialog;
+    TextView TV_questiondialog, questionDialog;
     Customdialog customdialog;
-    CountDownTimer QuestionCountDownTimer, recordingCountDownTimer, AnswerCountDownTimer;
     RippleBackground rippleBackground;
-    ImageView imageView;
     // SeekBar seekbar;
 
 
@@ -75,11 +79,16 @@ public class MockTestActivity extends AppCompatActivity {
 
     final int REquestPermissionCode = 1000;
     TextView startvoiceplay;
+    LoadingDialogs loadingDialogs;
 
 
     // private TextView TV_VoiceRecodingTime,TV_voice_recordingTotalTime;
     private PlayPauseView VoiceReording_ppv;
     ImageView IV_Finish;
+
+    String id, mid, Question, QuestionText, Answer, AnsText;
+    String idd, compareid, next_id;
+    TextView test_no;
 
 
 
@@ -92,11 +101,32 @@ public class MockTestActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        try {
+
+            if (getIntent() != null) {
+                idd = getIntent().getExtras().getString("id");
+
+                compareid = getIntent().getExtras().getString("compareid");
+                Playgingquestion();
+                Toast.makeText(this, compareid + "", Toast.LENGTH_SHORT).show();
+
+
+            }
+
+        } catch (Exception e) {
+
+        }
+    }
+
     private void initView() {
         if (!checkPermissionss()) {
             requestPermission();
         }
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
+        // util.blackiteamstatusbar(this, R.color.gradient_end_color);
         customdialog = new Customdialog(MockTestActivity.this);
         mediaPlayer = new MediaPlayer();
         answerMediaPlayer = new MediaPlayer();
@@ -109,7 +139,7 @@ public class MockTestActivity extends AppCompatActivity {
         TV_AnswerTime = findViewById(R.id.TV_AnswerTime);
         TV_AnswerTotalTime = findViewById(R.id.TV_AnswerTotalTime);
         TV_questiondialog = findViewById(R.id.TV_questiondialog);
-
+        questionDialog = findViewById(R.id.questionDialog);
         question_layout = findViewById(R.id.question_layout);
 
         recoding_layout = findViewById(R.id.recoding_layout);
@@ -125,13 +155,16 @@ public class MockTestActivity extends AppCompatActivity {
         // imageView = (ImageView) findViewById(R.id.centerImage);
 
         timer = findViewById(R.id.record_timer);
-        IV_Finish= findViewById(R.id.IV_Finish);
+        IV_Finish = findViewById(R.id.IV_Finish);
 
         RecodingPlay_Layout = findViewById(R.id.RecodingPlay_Layout);
         VoiceReording_ppv = findViewById(R.id.VoiceReording_ppv);
+        test_no= findViewById(R.id.test_no);
+        loadingDialogs = new LoadingDialogs(this);
 
 
-        StartQuestion();
+        //  StartQuestion();
+
         TV_question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,8 +178,35 @@ public class MockTestActivity extends AppCompatActivity {
         IV_Finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // initView();
-                StartQuestion();
+                // initView();
+                // StartQuestion();
+                if (Integer.parseInt(idd)<=Integer.parseInt(compareid))
+                {
+                    answerMediaPlayer.pause();
+                    answerMediaPlayer.release();
+                    answerMediaPlayer=null;
+                            answer_play_pause_view.toggle();
+                    initView();
+                    //setRecoding_layout();
+                    Playgingquestion();
+                    rippleBackground.setEnabled(true);
+
+                    pathSave=null;
+                    startvoiceplay.setText("Tap icon for start recording");
+                    VoiceReording_ppv.setEnabled(true);
+                    VoiceReording_ppv.toggle();
+                    TV_Answer.setEnabled(true);
+
+
+                }else {
+
+                    startActivity(new Intent(MockTestActivity.this,MainActivity.class));
+
+                    Toast.makeText(MockTestActivity.this, "Finished", Toast.LENGTH_SHORT).show();
+                }
+
+
+                // GetSubCategoryList();
 
             }
         });
@@ -201,7 +261,6 @@ public class MockTestActivity extends AppCompatActivity {
         });
 
         playingQuestion();
-
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -218,7 +277,21 @@ public class MockTestActivity extends AppCompatActivity {
             */
             }
         });
+        TV_questiondialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                customdialog.Show_Text(QuestionText);
+                // Toast.makeText(MockTestActivity.this, QuestionText+"", Toast.LENGTH_SHORT).show();
+            }
+        });
+        questionDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MockTestActivity.this, AnsText + "", Toast.LENGTH_SHORT).show();
+                customdialog.Show_Text(AnsText);
+            }
+        });
     }
 
 
@@ -280,12 +353,11 @@ public class MockTestActivity extends AppCompatActivity {
         }
     };
 
-    @SuppressLint("SetTextI18n")
     private void prepareMediaPlayer() {
 
 
         try {
-            mediaPlayer.setDataSource("http://misfitamigos.com/naticcl_englishwise/mock_test_data/hindi/questions/Aged_care/Aged_Care_Centre_Hindi_1.mp3");
+            mediaPlayer.setDataSource(Question);
             mediaPlayer.prepare();
             TV_questionTotalTime.setText("/" + milisecondTotime(mediaPlayer.getDuration()) + " Sec");
             Log.d("musicPlayerTimehere", String.valueOf(mediaPlayer.getDuration()));
@@ -345,6 +417,7 @@ public class MockTestActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (checkPermissions()) {
+                   // Toast.makeText(MockTestActivity.this, "rippleBackground", Toast.LENGTH_SHORT).show();
                     //Start Recording
                     startRecording();
                     //rippleBackground.startRippleAnimation();
@@ -387,6 +460,8 @@ public class MockTestActivity extends AppCompatActivity {
                         timer.stop();
 
                         mediaRecorderr.stop();
+                        mediaRecorderr.release();
+                        mediaRecorderr=null;
 
                         recoding_layout.setVisibility(View.GONE);
                         RecodingPlay_Layout.setVisibility(View.VISIBLE);
@@ -416,10 +491,20 @@ public class MockTestActivity extends AppCompatActivity {
 
     @Override
     public void onStop() {
+
         super.onStop();
-        if (isRecording) {
+      /*  if (isRecording) {
+            mediaPlayerr.stop();
+        }*/ /*else if (mediaPlayer.isPlaying()) {
+            mediaPlayer.stop();
+        } else if (answerMediaPlayer.isPlaying()) {
+
+            answerMediaPlayer.stop();
+        } else if (mediaPlayerr.isPlaying()) {
+
             mediaPlayerr.stop();
         }
+*/
     }
 
 
@@ -584,7 +669,7 @@ public class MockTestActivity extends AppCompatActivity {
 
 
         try {
-            answerMediaPlayer.setDataSource("http://misfitamigos.com/naticcl_englishwise/mock_test_data/hindi/answers/Aged_care/Aged_Care_Centre_Hindi_2.mp3");
+            answerMediaPlayer.setDataSource(Answer);
             answerMediaPlayer.prepare();
             TV_AnswerTotalTime.setText("/" + milisecondTotime(answerMediaPlayer.getDuration()) + " Sec");
             Log.d("musicPlayerTimehere", String.valueOf(answerMediaPlayer.getDuration()));
@@ -631,5 +716,104 @@ public class MockTestActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+      /*  if (!mediaPlayer.isPlaying()) {
+            mediaPlayer.start();
+        } else if (!answerMediaPlayer.isPlaying()) {
+
+            answerMediaPlayer.start();
+        } else if (!mediaPlayerr.isPlaying()) {
+
+            mediaPlayerr.start();
+        }
+
+*/
+    }
+
+    @Override
+    public void onBackPressed() {
+        try {
+
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.stop();
+                super.onBackPressed();
+
+            } else if (answerMediaPlayer.isPlaying()) {
+
+                answerMediaPlayer.stop();
+                super.onBackPressed();
+
+            } else if (mediaPlayerr.isPlaying()) {
+
+                mediaPlayerr.stop();
+                super.onBackPressed();
+
+            } else {
+                super.onBackPressed();
+
+            }
+
+        } catch (Exception e) {
+            super.onBackPressed();
+        }
+    }
+
+
+    public void Playgingquestion() {
+
+        loadingDialogs.startLoadingDialogs();
+        Call<ResponseBody> bodyCall = ApiClient.getUserService().Read_practicetest(idd);
+        Toast.makeText(this, idd+"", Toast.LENGTH_SHORT).show();
+        bodyCall.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Toast.makeText(MockTestActivity.this, response.code() + "", Toast.LENGTH_SHORT).show();
+                String s = null;
+                if (response.isSuccessful() && response.code() == 200 && response.body() != null) {
+                    try {
+                        s = response.body().string();
+
+                        JSONObject jsonObject = new JSONObject(s);
+                        JSONObject jsonObject1 = jsonObject.getJSONObject("data");
+                        id = jsonObject1.getString("id");
+                        test_no.setText("Test Set "+id);
+
+                        mid = jsonObject1.getString("mid");
+                        Question = jsonObject1.getString("question");
+                        QuestionText = jsonObject1.getString("question_text");
+                        Answer = jsonObject1.getString("answer");
+                        AnsText = jsonObject1.getString("answer_text");
+                        idd = jsonObject1.getString("next_id");
+                        loadingDialogs.dismissDialog();
+
+                        StartQuestion();
+
+
+                    } catch (JSONException | IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                loadingDialogs.dismissDialog();
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(MockTestActivity.this, t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
+                loadingDialogs.dismissDialog();
+
+            }
+        });
+
+
+    }
+
+
+    public void OnBackpress(View view) {
+        onBackPressed();
+    }
 }
 

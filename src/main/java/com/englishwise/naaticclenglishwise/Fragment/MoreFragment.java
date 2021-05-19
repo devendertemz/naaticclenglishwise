@@ -4,6 +4,7 @@ package com.englishwise.naaticclenglishwise.Fragment;
 import android.content.Context;
 import android.content.Intent;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -18,16 +19,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.englishwise.naaticclenglishwise.Activity.BlogActivity;
 import com.englishwise.naaticclenglishwise.Activity.CCL_TestActivity;
+import com.englishwise.naaticclenglishwise.Activity.Contact_Activity;
 import com.englishwise.naaticclenglishwise.Activity.EbooksActivity;
 import com.englishwise.naaticclenglishwise.Activity.EditProfile_Activity;
 import com.englishwise.naaticclenglishwise.Activity.VideoActivity;
 import com.englishwise.naaticclenglishwise.Activity.VocabularyActivity;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.dialog.Customdialog;
+import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 
 public class MoreFragment extends Fragment {
 
@@ -40,8 +44,11 @@ public class MoreFragment extends Fragment {
     private LinearLayout Blog_LL;
     private LinearLayout vocabulary_LL;
     private LinearLayout edit_profile_LL;
-
-    ImageView language_IV;
+    private LinearLayout ContactUs_LL;
+    private LinearLayout Facebook_LL;
+    private LinearLayout you_Tube_LL;
+    private LinearLayout Instagram_LL;
+    private TextView name, email;
 
 
     Customdialog customdialog;
@@ -73,14 +80,22 @@ public class MoreFragment extends Fragment {
         final Vibrator vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         customdialog = new Customdialog(getContext());
         vocabulary_LL = view.findViewById(R.id.Vocabulary_LL);
-         edit_profile_LL = view.findViewById(R.id.edit_profile_LL);
-        language_IV = view.findViewById(R.id.language_IV);
+        edit_profile_LL = view.findViewById(R.id.edit_profile_LL);
         Ebooks_LL = view.findViewById(R.id.Ebooks_LL);
         CCl_Test_LL = view.findViewById(R.id.CCl_Test_LL);
         Share_LL = view.findViewById(R.id.Share_LL);
         Videos_LL = view.findViewById(R.id.Videos_LL);
         Rate_App_LL = view.findViewById(R.id.Rate_App_LL);
         Blog_LL = view.findViewById(R.id.Blog_LL);
+        ContactUs_LL = view.findViewById(R.id.ContactUs_LL);
+        Facebook_LL = view.findViewById(R.id.Facebook_LL);
+        you_Tube_LL = view.findViewById(R.id.you_Tube_LL);
+        Instagram_LL = view.findViewById(R.id.Instagram_LL);
+        name = view.findViewById(R.id.name);
+        email = view.findViewById(R.id.email);
+        name.setText(SharedPrefManager.getInstans(getContext().getApplicationContext()).getfullname());
+        email.setText(SharedPrefManager.     getInstans(getContext().getApplicationContext()).getemail());
+
 
         ///customdialog.Sucess("Change language", "Once you change the language,you will lost all the current data.Are you sure you want to change the language ?");
 
@@ -95,22 +110,60 @@ public class MoreFragment extends Fragment {
 
         });
 
-        Blog_LL.setOnClickListener(new View.OnClickListener() {
+
+        ContactUs_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                Intent in = new Intent(getActivity(), BlogActivity.class);
+                Intent in = new Intent(getActivity(), Contact_Activity.class);
                 startActivity(in);
             }
 
 
         });
 
-        language_IV.setOnClickListener(new View.OnClickListener() {
+        Facebook_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-                customdialog.Sucess("Change language", "Once you change the language,you will lost all the current data.Are you sure you want to change the language ?");
+                String url = "https://www.facebook.com/EnglishWiseAU/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+
+
+        });
+        you_Tube_LL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(50);
+                String url = "https://www.youtube.com/channel/UCUZo5nsxtliDe1j0d-6NjCg";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+
+
+        });
+        Instagram_LL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(50);
+                String url = "https://www.instagram.com/englishwiseaustralia/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+
+
+        });
+        Blog_LL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(50);
+                Intent in = new Intent(getActivity(), BlogActivity.class);
+                startActivity(in);
             }
 
 
@@ -183,6 +236,8 @@ public class MoreFragment extends Fragment {
         });
 
     }
+
+
 
   /*  private void showdialog(String titlee,String dess) {
         LayoutInflater inflater=LayoutInflater.from(getContext());

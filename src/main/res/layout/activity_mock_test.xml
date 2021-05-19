@@ -24,7 +24,7 @@
             android:orientation="horizontal">
 
             <ImageView
-
+                android:onClick="OnBackpress"
                 style="@style/MenuItemArrow"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
@@ -78,6 +78,7 @@
                 android:padding="5dp">
 
                 <TextView
+                    android:id="@+id/test_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

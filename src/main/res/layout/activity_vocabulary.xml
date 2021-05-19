@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,43 +10,59 @@
     tools:context=".Activity.VocabularyActivity">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:onClick="OnBackpress"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            android:padding="3dp"
-            android:rotation="180"
-            android:src="@drawable/ic_arrow"
-            app:tint="@color/white"
-            tools:ignore="RtlHardcoded">
+            <ImageView
+                android:onClick="OnBackpress"
 
-        </ImageView>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="3dp"
+                android:rotation="180"
+                android:src="@drawable/ic_arrow"
+                app:tint="@color/white"
+                tools:ignore="RtlHardcoded">
 
-      <!--  <ImageView
-            android:id="@+id/language_IV"
-            android:layout_width="wrap_content"
+            </ImageView>
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="250dp"
-            android:padding="3dp"
-            android:src="@drawable/globe"
-            app:tint="@color/white"
-            tools:ignore="RtlHardcoded">
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:gravity="left"
+            android:text="Vocabulary"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        </ImageView>-->
+
+
+        <!--  <ImageView
+              android:id="@+id/language_IV"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="250dp"
+              android:padding="3dp"
+              android:src="@drawable/globe"
+              app:tint="@color/white"
+              tools:ignore="RtlHardcoded">
+
+          </ImageView>-->
 
 
     </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-            android:orientation="vertical">
+        android:orientation="vertical">
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,96 +76,78 @@
 
 
                 <TextView
-                    android:layout_marginLeft="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:gravity="left"
-                    android:text="Vocabulary"
-                    android:textColor="@color/white"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
+                    android:layout_marginLeft="10dp"
                     android:padding="3dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/vocabulary"
                     android:textColor="@color/white"
                     android:textSize="13sp"
                     android:textStyle="normal" />
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/morebg"
+            android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_marginTop="20sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/morebg"
-                        android:orientation="vertical">
-                        <FrameLayout
-                            android:layout_marginTop="30dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp">
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/Vocabulary_RV"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Vocabulary_RV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-                                android:orientation="vertical"
-                                tools:itemCount="2"
-                                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                                tools:listitem="@layout/vocabulary_adapter_layout"/>
+                    android:orientation="vertical"
+                    tools:itemCount="2"
+                    tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/vocabulary_adapter_layout" />
 
-                            <com.trendyol.bubblescrollbarlib.BubbleScrollBar
-                                android:id="@+id/fastscroll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="end"
-                                android:orientation="vertical"
-                                app:bubbleBackground="@drawable/fast_scroll_thumb"
-                                app:thumbBackground="@color/red"
-                                app:scrollbarBackground="@color/darkWhite"
-                                app:bubbleTextSize="8sp"
-                                app:bubbleElevation="6dp"
-                                app:bubbleMargin="4dp"
-                                app:bubbleHeight="50dp"
-                                app:bubbleMinWidth="50dp"
-                                app:bubbleTextColor="@color/default_bubble_text_color"
-                                app:bubblePadding="4dp"/>
-                        </FrameLayout>
+                <com.trendyol.bubblescrollbarlib.BubbleScrollBar
+                    android:id="@+id/fastscroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:orientation="vertical"
+                    app:bubbleBackground="@drawable/fast_scroll_thumb"
+                    app:bubbleElevation="6dp"
+                    app:bubbleHeight="50dp"
+                    app:bubbleMargin="4dp"
+                    app:bubbleMinWidth="50dp"
+                    app:bubblePadding="4dp"
+                    app:bubbleTextColor="@color/default_bubble_text_color"
+                    app:bubbleTextSize="8sp"
+                    app:scrollbarBackground="@color/darkWhite"
+                    app:thumbBackground="@color/red" />
+            </FrameLayout>
 
 
+            <!--     <androidx.recyclerview.widget.RecyclerView
+                     android:layout_marginTop="20dp"
 
-                   <!--     <androidx.recyclerview.widget.RecyclerView
-                            android:layout_marginTop="20dp"
+                     android:id="@+id/RecyclerView_Vocabulary"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center"
+                     android:orientation="vertical"
+                     tools:itemCount="2"
+                     tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                     tools:listitem="@layout/vocabulary_adapter_layout">
 
-                            android:id="@+id/RecyclerView_Vocabulary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:orientation="vertical"
-                            tools:itemCount="2"
-                            tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                            tools:listitem="@layout/vocabulary_adapter_layout">
-
-                        </androidx.recyclerview.widget.RecyclerView>
+                 </androidx.recyclerview.widget.RecyclerView>
 -->
 
 
-
-
-
-
-                    </LinearLayout>
-
-
-
-
         </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

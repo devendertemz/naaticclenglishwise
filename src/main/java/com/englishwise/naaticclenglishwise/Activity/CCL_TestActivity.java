@@ -43,7 +43,7 @@ public class CCL_TestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c_c_l__test);
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
+       /// util.blackiteamstatusbar(this, R.color.gradient_end_color);
         vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_page);

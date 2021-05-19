@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 
 import com.englishwise.naaticclenglishwise.Adapter.IntroViewPagerAdapter;
-import com.englishwise.naaticclenglishwise.MainActivity;
 import com.englishwise.naaticclenglishwise.Modal.ScreenItem;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.util.util;

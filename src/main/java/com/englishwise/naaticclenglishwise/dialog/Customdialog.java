@@ -57,6 +57,46 @@ public class Customdialog {
 
         alertDialog.show();
     }
+    public void Show_Text( String dess) {
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.showtext, null);
+        AlertDialog alertDialog = new AlertDialog.Builder(context)
+                .setView(view)
+                .setCancelable(false)
+                .create();
+
+        // alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        Button read_btn = view.findViewById(R.id.read_btn);
+
+       ImageView cancel_Iv = view.findViewById(R.id.cancel_Iv);
+        TextView des = view.findViewById(R.id.message);
+
+        des.setText(dess);
+        read_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+                // ShowLanguage();
+                // Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        cancel_Iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+                // ShowLanguage();
+                // Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+        alertDialog.show();
+    }
+
 
     public void Mocktestdialog(String titlee, String dess, int image) {
 

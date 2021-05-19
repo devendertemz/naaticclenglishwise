@@ -17,7 +17,6 @@ public class BlogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
         vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         //dev
 

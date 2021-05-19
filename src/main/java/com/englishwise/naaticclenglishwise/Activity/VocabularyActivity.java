@@ -49,7 +49,7 @@ public class VocabularyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocabulary);
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
+      //  util.blackiteamstatusbar(this, R.color.gradient_end_color);
 
         vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         loadingDialogs = new LoadingDialogs(this);

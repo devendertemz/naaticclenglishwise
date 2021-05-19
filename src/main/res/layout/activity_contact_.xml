@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#27386C"
+
+    android:orientation="vertical"
+    tools:context=".Activity.Contact_Activity">
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:onClick="OnBackpress"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:rotation="180"
+            android:src="@drawable/ic_arrow"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded">
+
+        </ImageView>
+
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:text="Contact Us"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:visibility="gone"
+
+            android:id="@+id/Day_IV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:padding="3dp"
+
+            android:src="@drawable/sun"
+            app:tint="@color/white"
+            tools:ignore="RtlHardcoded">
+
+        </ImageView>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/morebg"
+                            android:orientation="vertical">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerVieww"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                />
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

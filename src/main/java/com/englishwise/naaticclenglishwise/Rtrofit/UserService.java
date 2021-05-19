@@ -1,6 +1,6 @@
 package com.englishwise.naaticclenglishwise.Rtrofit;
 
-import com.englishwise.naaticclenglishwise.ModalResponse.Generate_otp;
+import com.englishwise.naaticclenglishwise.ModalResponse.MockRespBean;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public interface UserService {
 
   */
 
-
+/*
     @FormUrlEncoded
     @POST("login/generate_otp.php")
     Call<ResponseBody> Generate_otp(
@@ -53,7 +53,60 @@ public interface UserService {
     @POST("vocabulary/read_vocabulary.php")
     Call<ResponseBody> read_vocabulary(
             @Field("lan") String lan
+    );*/
+
+    @FormUrlEncoded
+    @POST("auth/generate_otp")
+    Call<ResponseBody> Generate_otp(
+            @Field("phone") String phone
+    );
+
+    @FormUrlEncoded
+    @POST("auth/validate_user")
+    Call<ResponseBody> validate_user_bynumber(
+            @Field("phone") String phone
+    );
+
+    @FormUrlEncoded
+    @POST("auth/validate_user")
+    Call<ResponseBody> validate_user_byEmail(
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("user/registration")
+    Call<ResponseBody> registration(
+            @Field("fullname") String fullname,
+            @Field("email") String email,
+            @Field("phone") String phone,
+            @Field("language") String language
+    );
+
+    //read_vocabulary
+    //http://misfitamigos.com/naticcl_englishwise/vocabulary/read_vocabulary.php?
+    @FormUrlEncoded
+    @POST("read/vocabulary")
+    Call<ResponseBody> read_vocabulary(
+            @Field("lan") String lan
+    );
+
+    @FormUrlEncoded
+    @POST("language/category")
+    Call<List<MockRespBean>> Read_MocktestList(
+            @Field("lan") String lan
     );
 
 
+
+
+    @FormUrlEncoded
+    @POST("all/practicetest")
+    Call<ResponseBody> Read_practicetestt(
+            @Field("dialogueid") String dialogueid
+    );
+
+    @GET("auth/moacktest/{cat_id}")
+    Call<ResponseBody> Read_practicetest(
+            @Path("cat_id") String cat_id
+    );
 }

@@ -1,4 +1,4 @@
-package com.englishwise.naaticclenglishwise;
+package com.englishwise.naaticclenglishwise.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -10,17 +10,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
+import com.englishwise.naaticclenglishwise.util.CheckInternetConnection;
 import com.englishwise.naaticclenglishwise.Fragment.CoachingFragment;
 import com.englishwise.naaticclenglishwise.Fragment.HomeFragment;
 import com.englishwise.naaticclenglishwise.Fragment.MoreFragment;
 import com.englishwise.naaticclenglishwise.Fragment.SetTestFragment;
+import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.dialog.AppUpdateChecker;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
-import com.englishwise.naaticclenglishwise.util.util;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.irozon.sneaker.Sneaker;
 
@@ -44,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
       /*  getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);*/
+
         setContentView(R.layout.activity_main);
 
 
-        util.blackiteamstatusbar(this, R.color.gradient_end_color);
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
 
