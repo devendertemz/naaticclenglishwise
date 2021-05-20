@@ -103,7 +103,6 @@
                         <TextView
 
                             android:id="@+id/name"
-                            android:gravity="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Devender Singh"
@@ -114,7 +113,6 @@
                         <TextView
                             android:id="@+id/email"
                             android:layout_width="match_parent"
-                            android:gravity="center"
 
                             android:layout_height="wrap_content"
                             android:text="devendertemz@gmail.com"
@@ -385,7 +383,7 @@
                             android:layout_height="wrap_content"
 
                             android:padding="10dp"
-                            android:text="Other Service"
+                            android:text="Apply for Courses"
                             android:textColor="@color/gradient_end_color"
                             android:textSize="12dp"
                             android:textStyle="italic">
@@ -422,7 +420,7 @@
 
                             <TextView
                                 style="@style/MenuItemLabel"
-                                android:text="Point Calculator" />
+                                android:text="PTE Course " />
 
                             <ImageView
                                 style="@style/MenuItemArrow"
@@ -455,7 +453,7 @@
 
                             <TextView
                                 style="@style/MenuItemLabel"
-                                android:text="Check My Visa" />
+                                android:text="NATTI CCL Course" />
 
                             <ImageView
                                 style="@style/MenuItemArrow"
@@ -465,38 +463,6 @@
 
                     <View style="@style/MenuItemUnderline" />
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10sp"
-                        android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
-                        app:cardCornerRadius="8sp"
-                        app:cardElevation="10dp">
-
-                        <LinearLayout
-                            style="@style/MenuItemParent"
-                            android:background="?selectableItemBackground">
-
-                            <ImageView
-                                style="@style/MenuItemImage"
-                                app:srcCompat="@drawable/ic_more"
-                                tools:ignore="VectorDrawableCompat" />
-
-                            <TextView
-                                style="@style/MenuItemLabel"
-                                android:text="Get My Policy" />
-
-                            <ImageView
-                                style="@style/MenuItemArrow"
-                                app:srcCompat="@drawable/ic_toolbar_back" />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <View style="@style/MenuItemUnderline" />
 
 
                 </LinearLayout>

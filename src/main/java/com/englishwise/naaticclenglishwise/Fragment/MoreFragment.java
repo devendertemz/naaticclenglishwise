@@ -22,6 +22,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.englishwise.naaticclenglishwise.Activity.BlogActivity;
 import com.englishwise.naaticclenglishwise.Activity.CCL_TestActivity;
 import com.englishwise.naaticclenglishwise.Activity.Contact_Activity;
@@ -32,6 +33,8 @@ import com.englishwise.naaticclenglishwise.Activity.VocabularyActivity;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.dialog.Customdialog;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MoreFragment extends Fragment {
 
@@ -49,6 +52,8 @@ public class MoreFragment extends Fragment {
     private LinearLayout you_Tube_LL;
     private LinearLayout Instagram_LL;
     private TextView name, email;
+    CircleImageView iv_profile_photo;
+
 
 
     Customdialog customdialog;
@@ -80,6 +85,8 @@ public class MoreFragment extends Fragment {
         final Vibrator vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         customdialog = new Customdialog(getContext());
         vocabulary_LL = view.findViewById(R.id.Vocabulary_LL);
+        iv_profile_photo=view.findViewById(R.id.iv_profile_photo);
+
         edit_profile_LL = view.findViewById(R.id.edit_profile_LL);
         Ebooks_LL = view.findViewById(R.id.Ebooks_LL);
         CCl_Test_LL = view.findViewById(R.id.CCl_Test_LL);
@@ -93,6 +100,17 @@ public class MoreFragment extends Fragment {
         Instagram_LL = view.findViewById(R.id.Instagram_LL);
         name = view.findViewById(R.id.name);
         email = view.findViewById(R.id.email);
+        try {
+
+            Glide.with(getContext())
+                    .load("https://misfitamigos.com/naticcl_api/user_guide/_images/"+SharedPrefManager.getInstans(getContext().getApplicationContext()).getprofileImage())
+                    .into(iv_profile_photo);
+        }catch (Exception e)
+        {
+
+        }
+       // Toast.makeText(getContext(), SharedPrefManager.getInstans(getContext().getApplicationContext()).getprofileImage()+"", Toast.LENGTH_SHORT).show();
+
         name.setText(SharedPrefManager.getInstans(getContext().getApplicationContext()).getfullname());
         email.setText(SharedPrefManager.     getInstans(getContext().getApplicationContext()).getemail());
 

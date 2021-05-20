@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +30,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV;
+    TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV,Start_Practice;
     LinearLayout AllCourse_LL, PTEBook_LL, AllBranch_LL, Practice_LL, OnlineClasse_LL, Stories_LL;
     List<videoModel> mData;
     RecyclerView video_adapter_layout;
@@ -54,6 +56,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initView(View view) {
+        Start_Practice= view.findViewById(R.id.Start_Practice);
         Hindi_TV = view.findViewById(R.id.Hindi_TV);
         Tamil_TV = view.findViewById(R.id.Tamil_TV);
         Urdu_TV = view.findViewById(R.id.Urdu_TV);
@@ -80,6 +83,17 @@ public class HomeFragment extends Fragment {
         video_adapter_layout.setLayoutManager(manager);
         SetLanguage();
         getVideo();
+        Start_Practice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  Toast.makeText(getContext(), "start practice", Toast.LENGTH_SHORT).show();
+                SetTestFragment setTestFragment = new SetTestFragment();
+                FragmentManager setTestFragmentmanager = getActivity().getSupportFragmentManager();
+                FragmentTransaction setTestFragmentransaction = setTestFragmentmanager.beginTransaction();
+                setTestFragmentransaction.replace(R.id.contentPanel, setTestFragment);
+                setTestFragmentransaction.commit();
+            }
+        });
 
 
     }

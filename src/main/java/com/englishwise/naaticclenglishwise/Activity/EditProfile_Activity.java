@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 
@@ -19,6 +23,12 @@ public class EditProfile_Activity extends AppCompatActivity {
     ImageView Day_IV, Night_IV;
     TextView Tv_Email, TV_Number, Tv_Language;
     EditText Ed_Name;
+
+
+    FrameLayout Opengallery;
+    ImageView iv_profile_photo;
+    Uri imageUri;
+    private static final int PICK_IMAGE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +53,8 @@ public class EditProfile_Activity extends AppCompatActivity {
 
         );*/
 
+        Opengallery = findViewById(R.id.Opengallery);
+        iv_profile_photo = findViewById(R.id.iv_profile_photo);
 
         Night_IV = findViewById(R.id.Night_IV);
         Day_IV = findViewById(R.id.Day_IV);
@@ -53,7 +65,15 @@ public class EditProfile_Activity extends AppCompatActivity {
         Ed_Name = findViewById(R.id.Ed_Name);
         Tv_Language = findViewById(R.id.Tv_Language);
 
+        try {
 
+            Glide.with(this)
+                    .load("https://misfitamigos.com/naticcl_api/user_guide/_images/"+SharedPrefManager.getInstans(getApplicationContext()).getprofileImage())
+                    .into(iv_profile_photo);
+        }catch (Exception e)
+        {
+
+        }
         TV_Number.setText(SharedPrefManager.getInstans(getApplicationContext()).getNumber());
         Tv_Email.setText(SharedPrefManager.getInstans(getApplicationContext()).getemail());
         Ed_Name.setText(SharedPrefManager.getInstans(getApplicationContext()).getfullname());
@@ -99,6 +119,13 @@ public class EditProfile_Activity extends AppCompatActivity {
                 Day_IV.setVisibility(View.GONE);
             }
         });
+
+        Opengallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGallery();
+            }
+        });
     }
 
     public void OnBackpress(View view) {
@@ -113,5 +140,16 @@ public class EditProfile_Activity extends AppCompatActivity {
         startActivity(in);
     }
 
-
+    private void openGallery() {
+        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(gallery, PICK_IMAGE);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            imageUri = data.getData();
+            iv_profile_photo.setImageURI(imageUri);
+        }
+    }
 }
