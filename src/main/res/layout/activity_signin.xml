@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,21 +13,22 @@
     tools:context=".Activity.SigninActivity">
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:orientation="vertical"
 
         android:padding="8dp">
 
 
         <ImageView
+            android:scaleType="centerCrop"
+
             android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:layout_height="250dp"
             android:layout_gravity="left"
-            android:layout_margin="10dp"
-            android:src="@drawable/logo2"
+            android:src="@drawable/logo1"
             tools:ignore="RtlHardcoded">
 
         </ImageView>
@@ -74,14 +75,14 @@
                 android:weightSum="5">
 
                 <ImageView
-                    android:src="@drawable/australia1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:scaleType="centerCrop"
                     android:gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/australia1"
 
                     />
 
@@ -96,11 +97,11 @@
                     app:ccp_defaultNameCode="AU" />
 
                 <EditText
-                    android:background="@android:drawable/editbox_background"
                     android:id="@+id/number"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="4"
+                    android:background="@android:drawable/editbox_background"
                     android:fontFamily="@font/robotomedium"
                     android:hint="@string/contact_hint"
                     android:inputType="number"
@@ -167,4 +168,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

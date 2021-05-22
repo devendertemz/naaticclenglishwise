@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+/*
 
         Log.e("user",        SharedPrefManager.getInstans(getApplicationContext()).getNumber()+
                 SharedPrefManager.getInstans(getApplicationContext()).getemail()+
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         );
+*/
 
         AppUpdateChecker appUpdateChecker=new AppUpdateChecker(this);  //pass the activity in constructure
         appUpdateChecker.checkForUpdate(false); //mannual check false here
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getId()) {
                     case ID_HOME:
 
-                      //  vibe.vibrate(50);
+                  // vibe.vibrate(50);
 
                         HomeFragment HomeFragment = new HomeFragment();
                         FragmentManager manager = getSupportFragmentManager();
@@ -170,7 +172,12 @@ public class MainActivity extends AppCompatActivity {
                         profiletransaction.commit();
                         break;
                     default:
-                        name = "";
+                    /*    bottomNavigation.show(ID_HOME, true);
+                        HomeFragment appNewsHome1Fragment = new HomeFragment();
+                        FragmentManager manager2 = getSupportFragmentManager();
+                        FragmentTransaction transaction2 = manager2.beginTransaction();
+                        transaction2.replace(R.id.contentPanel, appNewsHome1Fragment);
+                        transaction2.commit();*/
                 }
             }
         });
@@ -181,15 +188,15 @@ public class MainActivity extends AppCompatActivity {
                // Toast.makeText(MainActivity.this, "reselected item : " + item.getId(), Toast.LENGTH_SHORT).show();
             }
         });
-
-//        bottomNavigation.setCount(ID_HOME, "115");
-
         bottomNavigation.show(ID_HOME, true);
         HomeFragment appNewsHome1Fragment = new HomeFragment();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.contentPanel, appNewsHome1Fragment);
-        transaction.commit();
+        FragmentManager manager2 = getSupportFragmentManager();
+        FragmentTransaction transaction2 = manager2.beginTransaction();
+        transaction2.replace(R.id.contentPanel, appNewsHome1Fragment);
+        transaction2.commit();
+//        bottomNavigation.setCount(ID_HOME, "115");
+
+      /* */
     }
 
     @Override

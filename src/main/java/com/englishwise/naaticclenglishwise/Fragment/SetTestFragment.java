@@ -83,14 +83,8 @@ public class SetTestFragment extends Fragment implements ListMocktestAdapter.Cli
 
         listMocktestAdapter = new ListMocktestAdapter(this::ClickedUser);
 
-       /* listMocktestAdapter = new ListMocktestAdapter(GetMockDetailssList,getContext());
-        RV_MockTest.setAdapter(listMocktestAdapter);*/
-       /* AboutIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AboutNoice("Information about Mock test","A mock test is defined as an examination, which does not have any marks. The test will assist the student or the candidate to acquire an idea as to how it would look like in a real time frame. You can take a mock test on various subjects that include programming");
-            }});
-*/
+
+
 
 
     }
@@ -122,30 +116,7 @@ public class SetTestFragment extends Fragment implements ListMocktestAdapter.Cli
 
 
                 }
-           /*     if (response.isSuccessful()) {
-                    List<ProductDeatilsResponse> userResponses = response.body();
-                    for (int i=0;i<userResponses.size();i++)
-                    {
-                        name.setText(  userResponses.get(i).getProductName());
-                        finalPrice.setText("Rs."+userResponses.get(i).getActualAmount());
-                        discountprice.setText("Rs."+userResponses.get(i).getPrice());
-                        discount.setText(userResponses.get(i).getDiscount()+"% OFF");
-                        product_desc.setText(HtmlCompat.fromHtml(userResponses.get(i).getProductDesc(), 0));
 
-                        String url = "http://api.ourprive.com/" + userResponses.get(i).getImages();
-
-                        Picasso.get().load(url).into(d_image);
-
-                        Toast.makeText(ProdcutDeatails.this, userResponses.get(i).getCategoryname(), Toast.LENGTH_SHORT).show();
-
-                    }
-                    Toast.makeText(ProdcutDeatails.this, "right way", Toast.LENGTH_SHORT).show();
-
-
-                  *//*  secondcategory_adapterr.setData(userResponses);
-                    recyclerView.setAdapter(secondcategory_adapterr);*//*
-
-                }*/
 
             }
 

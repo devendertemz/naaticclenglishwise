@@ -1,5 +1,6 @@
 package com.englishwise.naaticclenglishwise.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +8,8 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Vibrator;
@@ -19,22 +20,36 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.englishwise.naaticclenglishwise.Activity.MockTestActivity;
-import com.englishwise.naaticclenglishwise.Adapter.HomeVideoAdapter;
-import com.englishwise.naaticclenglishwise.Modal.videoModel;
+import com.englishwise.naaticclenglishwise.Activity.VideoPlayerActivity;
+import com.englishwise.naaticclenglishwise.Adapter.YoutubeVideo_Adapter;
+import com.englishwise.naaticclenglishwise.Modal.Youtube_Model;
+import com.englishwise.naaticclenglishwise.ModalResponse.VideoRespBean;
 import com.englishwise.naaticclenglishwise.R;
-import com.englishwise.naaticclenglishwise.callback.ItemClickListener;
+import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
+import com.englishwise.naaticclenglishwise.callback.ItemClickListenerr;
+import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV,Start_Practice;
+public class HomeFragment extends Fragment implements ItemClickListenerr {
+
+    TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV, Start_Practice;
     LinearLayout AllCourse_LL, PTEBook_LL, AllBranch_LL, Practice_LL, OnlineClasse_LL, Stories_LL;
-    List<videoModel> mData;
     RecyclerView video_adapter_layout;
-    HomeVideoAdapter homeVideoAdapter;
+
+    LoadingDialogs loadingDialogs;
+    public Activity activity;
+
+    private ArrayList<VideoRespBean.Datum> data;
+    YoutubeVideo_Adapter youtubeVideo_adapter;
+
+
     public HomeFragment() {
     }
 
@@ -43,6 +58,12 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.activity = activity;
     }
 
     @Override
@@ -56,7 +77,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initView(View view) {
-        Start_Practice= view.findViewById(R.id.Start_Practice);
+        Start_Practice = view.findViewById(R.id.Start_Practice);
         Hindi_TV = view.findViewById(R.id.Hindi_TV);
         Tamil_TV = view.findViewById(R.id.Tamil_TV);
         Urdu_TV = view.findViewById(R.id.Urdu_TV);
@@ -76,17 +97,19 @@ public class HomeFragment extends Fragment {
         OnlineClasse_LL = view.findViewById(R.id.OnlineClasse_LL);
         Stories_LL = view.findViewById(R.id.Stories_LL);
 
-        video_adapter_layout=view.findViewById(R.id.video_adapter_layout);
-        mData = new ArrayList<>();
+        video_adapter_layout = view.findViewById(R.id.video_adapter_layout);
+        loadingDialogs = new LoadingDialogs(getActivity());
 
         GridLayoutManager manager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
         video_adapter_layout.setLayoutManager(manager);
         SetLanguage();
-        getVideo();
+        //getVideo();
+        get_youtubeVideo();
+
         Start_Practice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Toast.makeText(getContext(), "start practice", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), "start practice", Toast.LENGTH_SHORT).show();
                 SetTestFragment setTestFragment = new SetTestFragment();
                 FragmentManager setTestFragmentmanager = getActivity().getSupportFragmentManager();
                 FragmentTransaction setTestFragmentransaction = setTestFragmentmanager.beginTransaction();
@@ -98,35 +121,6 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private void getVideo() {
-
-        // fill list news with data
-        // just for testing purpose i will fill the news list with random data
-        // you may get your data from an api / firebase or sqlite database ...
-        mData.add(new videoModel("ti","da",R.drawable.profile));
-        mData.add(new videoModel("ti","da",R.drawable.profile));
-        mData.add(new videoModel("ti","da",R.drawable.profile));
-
-        // adapter ini and setup
-
-
-
-        ItemClickListener itemClickListener = new ItemClickListener() {
-            @Override
-            public void onClick(View view, int position, boolean isLongClick) {
-                /*
-                Intent intent = new Intent(News.this,PDFActivity.class);
-
-                //intent.putExtra("url",list.get(position).getPdfUrl());
-                intent.putExtra("position",position);
-                startActivity(intent);*/
-            }
-        };
-        homeVideoAdapter = new HomeVideoAdapter(getContext(),mData,itemClickListener);
-        video_adapter_layout.setAdapter(homeVideoAdapter);
-
-
-    }
 
     private void SetLanguage() {
 
@@ -136,14 +130,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-              //  Toast.makeText(getContext(), Hindi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), Hindi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Tamil_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-               // Toast.makeText(getContext(), Tamil_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), Tamil_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -151,42 +145,42 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-               // Toast.makeText(getContext(), Urdu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), Urdu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Punjabi_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-              //  Toast.makeText(getContext(), Punjabi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), Punjabi_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Malayalam_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-               // Toast.makeText(getContext(), Malayalam_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), Malayalam_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Telugu_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-              //  Toast.makeText(getContext(), Telugu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), Telugu_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Nepaese_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-              //  Toast.makeText(getContext(), Nepaese_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), Nepaese_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Gujarati_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
-              //  Toast.makeText(getContext(), Gujarati_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(getContext(), Gujarati_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
         Spanish_TV.setOnClickListener(new View.OnClickListener() {
@@ -195,7 +189,7 @@ public class HomeFragment extends Fragment {
                 vibe.vibrate(50);
               /*  Intent in=new Intent(getActivity(), MockTestActivity.class);
                 startActivity(in);*/
-               // Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), Spanish_TV.getText().toString() + "", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -248,6 +242,72 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+    }
+
+
+    private void get_youtubeVideo() {
+
+        loadingDialogs.startLoadingDialogs();
+
+
+        Call<VideoRespBean> bodyCall = ApiClient.getUserService().Get_YoutubeVideo();
+
+        bodyCall.enqueue(new Callback<VideoRespBean>() {
+            @Override
+            public void onResponse(Call<VideoRespBean> call, Response<VideoRespBean> response) {
+                // Log.e("response", String.valueOf(response.code()));
+                //  Toast.makeText(activity, "dgfdgfd", Toast.LENGTH_SHORT).show();
+
+                if (response.isSuccessful() && response.body() != null && response.code() == 200) {
+                    try {
+
+
+                        loadingDialogs.dismissDialog();
+                        VideoRespBean blogRespBean = response.body();
+
+
+                        // Toast.makeText(BlogActivity.this, response.message() + "", Toast.LENGTH_SHORT).show();
+                        data = new ArrayList<VideoRespBean.Datum>(Arrays.asList(blogRespBean.getResults()));
+
+
+                        youtubeVideo_adapter = new YoutubeVideo_Adapter(data, activity.getApplicationContext(), HomeFragment.this::onClick);
+                        video_adapter_layout.setItemAnimator(new DefaultItemAnimator());
+                        video_adapter_layout.setAdapter(youtubeVideo_adapter);
+
+
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<VideoRespBean> call, Throwable t) {
+                loadingDialogs.dismissDialog();
+
+                // Toast.makeText(getContext(), t.getLocalizedMessage() + "", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public void onClick(int position) {
+
+        Youtube_Model youtube_model = new Youtube_Model(data.get(position).getProfileVideoId(),
+                data.get(position).getVideoName(),
+                data.get(position).getTitle(),
+                data.get(position).getThumbnailImage(),
+                data.get(position).getVideoUrl());
+
+        Intent intent=new Intent(getContext(), VideoPlayerActivity.class);
+        intent.putExtra("youtube_model",youtube_model);
+        startActivity(intent);
+        //Toast.makeText(activity, data.get(position).getProfileVideoId()+"", Toast.LENGTH_SHORT).show();
 
     }
 }

@@ -16,8 +16,6 @@ import com.englishwise.naaticclenglishwise.R;
 import com.englishwise.naaticclenglishwise.dialog.Customdialog;
 
 public class CoachingFragment extends Fragment {
-    TextView language;
-    LinearLayout LL_mocktestDemo;
 
 
     public CoachingFragment() {
@@ -43,16 +41,6 @@ public class CoachingFragment extends Fragment {
     }
 
     private void initView(View view) {
-        language = view.findViewById(R.id.language);
-        LL_mocktestDemo = view.findViewById(R.id.LL_mocktestDemo);
-
-        LL_mocktestDemo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in=new Intent(getActivity(), MockTestActivity.class);
-                startActivity(in);
-            }
-        });
 
     }
 }

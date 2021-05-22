@@ -1,6 +1,8 @@
 package com.englishwise.naaticclenglishwise.Rtrofit;
 
+import com.englishwise.naaticclenglishwise.ModalResponse.BlogRespBean;
 import com.englishwise.naaticclenglishwise.ModalResponse.MockRespBean;
+import com.englishwise.naaticclenglishwise.ModalResponse.VideoRespBean;
 
 import java.util.List;
 
@@ -109,4 +111,18 @@ public interface UserService {
     Call<ResponseBody> Read_practicetest(
             @Path("cat_id") String cat_id
     );
+
+
+    @GET("auth/blog")
+    Call<BlogRespBean> getBlog(
+    );
+
+
+    @GET("auth/profile_video")
+    Call<VideoRespBean> Get_YoutubeVideo(
+    );
+
+
+
+
 }

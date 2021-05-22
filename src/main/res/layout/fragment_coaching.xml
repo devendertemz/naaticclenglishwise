@@ -70,7 +70,6 @@
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/language"
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,27 +105,6 @@
 
                  <!--   <include layout="@layout/no_course_available" />-->
 
-                    <LinearLayout
-
-                        android:id="@+id/LL_mocktestDemo"
-                        style="@style/MenuItemParent"
-                        android:background="?selectableItemBackground">
-
-                        <ImageView
-                            style="@style/MenuItemImage"
-                            app:srcCompat="@drawable/ic_more"
-                            tools:ignore="VectorDrawableCompat" />
-
-                        <TextView
-                            style="@style/MenuItemLabel"
-                            android:text="Mock test Demo" />
-
-                        <ImageView
-                            style="@style/MenuItemArrow"
-                            app:srcCompat="@drawable/ic_toolbar_back" />
-                    </LinearLayout>
-
-                    <View style="@style/MenuItemUnderline" />
 
 
 

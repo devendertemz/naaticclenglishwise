@@ -198,7 +198,6 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -234,7 +233,6 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -268,7 +266,6 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -302,7 +299,6 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -332,11 +328,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="10sp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10sp"
+                        android:layout_margin="10dp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -405,7 +398,6 @@
                         android:layout_marginLeft="10sp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -434,11 +426,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="10sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10sp"
+                        android:layout_margin="10dp"
+
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -507,7 +497,6 @@
                         android:layout_marginLeft="10sp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -539,7 +528,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -568,11 +556,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="10sp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="10sp"
+                        android:layout_margin="10dp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -644,7 +629,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -672,6 +656,8 @@
                     <View style="@style/MenuItemUnderline" />
 
                     <androidx.cardview.widget.CardView
+                        android:layout_marginBottom="10dp"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -679,7 +665,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -746,7 +731,6 @@
                         android:layout_marginLeft="10sp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -778,7 +762,6 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
@@ -811,7 +794,8 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10sp"
                         android:padding="8dp"
-                        app:cardBackgroundColor="@color/darkWhite"
+                        android:layout_marginBottom="10dp"
+
                         app:cardCornerRadius="8sp"
                         app:cardElevation="10dp">
 
