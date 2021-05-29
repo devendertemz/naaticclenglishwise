@@ -4,122 +4,139 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:background="#27386C"
+
     android:orientation="vertical"
     tools:context=".Fragment.CoachingFragment">
 
-
     <LinearLayout
-        android:layout_marginLeft="20dp"
-        android:layout_gravity="bottom"
-        android:gravity="left|center"
+
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10sp"
-            android:fontFamily="@font/robotomedium"
-            android:text="@string/ccl_coaching"
-
+            android:layout_marginLeft="15dp"
+            android:gravity="left"
+            android:text="Vocabulary"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
 
 
+        <!--  <ImageView
+              android:id="@+id/language_IV"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="250dp"
+              android:padding="3dp"
+              android:src="@drawable/globe"
+              app:tint="@color/white"
+              tools:ignore="RtlHardcoded">
+
+          </ImageView>-->
+
+
     </LinearLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:orientation="vertical">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
 
-            android:orientation="vertical">
+            android:padding="5dp">
 
-            <LinearLayout
-                android:layout_marginLeft="20dp"
+
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-
-          >
-
-
-
-
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="left"
-                    android:text="@string/online_coaching"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:textStyle="normal" />
-
-                <TextView
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/robotomedium"
-                    android:gravity="left"
-                    android:text="Course Details"
-
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/morebg"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_marginTop="20sp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    tools:ignore="UselessParent">
-
-                 <!--   <include layout="@layout/no_course_available" />-->
-
-
-
-
-
-
-
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:padding="3dp"
+                android:text="@string/vocabulary"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="normal" />
         </LinearLayout>
 
-    </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/morebg"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Vocabulary_RV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+                    tools:itemCount="2"
+                    tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/vocabulary_adapter_layout" />
+
+                <com.trendyol.bubblescrollbarlib.BubbleScrollBar
+                    android:id="@+id/fastscroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:orientation="vertical"
+                    app:bubbleBackground="@drawable/fast_scroll_thumb"
+                    app:bubbleElevation="6dp"
+                    app:bubbleHeight="50dp"
+                    app:bubbleMargin="4dp"
+                    app:bubbleMinWidth="50dp"
+                    app:bubblePadding="4dp"
+                    app:bubbleTextColor="@color/default_bubble_text_color"
+                    app:bubbleTextSize="8sp"
+                    app:scrollbarBackground="@color/darkWhite"
+                    app:thumbBackground="@color/red" />
+            </FrameLayout>
+
+
+            <!--     <androidx.recyclerview.widget.RecyclerView
+                     android:layout_marginTop="20dp"
+
+                     android:id="@+id/RecyclerView_Vocabulary"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_gravity="center"
+                     android:orientation="vertical"
+                     tools:itemCount="2"
+                     tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                     tools:listitem="@layout/vocabulary_adapter_layout">
+
+                 </androidx.recyclerview.widget.RecyclerView>
+-->
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 </LinearLayout>

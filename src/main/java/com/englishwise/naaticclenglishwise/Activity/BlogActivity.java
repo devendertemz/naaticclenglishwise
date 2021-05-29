@@ -74,7 +74,6 @@ public class BlogActivity extends AppCompatActivity implements ItemClickListener
                 //     Toast.makeText(BlogActivity.this, response.code() + "", Toast.LENGTH_SHORT).show();
                 if (response.isSuccessful() && response.body() != null && response.code() == 200) {
                     try {
-                        loadingDialogs.dismissDialog();
                         BlogRespBean blogRespBean = response.body();
 
                         // Toast.makeText(BlogActivity.this, response.message() + "", Toast.LENGTH_SHORT).show();
@@ -85,6 +84,8 @@ public class BlogActivity extends AppCompatActivity implements ItemClickListener
                         RecyclerView_Blog.setLayoutManager(mLayoutManager);
                         RecyclerView_Blog.setItemAnimator(new DefaultItemAnimator());
                         RecyclerView_Blog.setAdapter(blogAdapter);
+                        loadingDialogs.dismissDialog();
+
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }

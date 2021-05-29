@@ -93,7 +93,6 @@ public class SigninActivity extends AppCompatActivity {
                     showSnackbar(v, "Enter a valid Mobile number", Snackbar.LENGTH_SHORT);
                     loadingDialogs.dismissDialog();
 
-
                 } else {
 
                     Call<ResponseBody> userlist = ApiClient.getUserService().Generate_otp(number);

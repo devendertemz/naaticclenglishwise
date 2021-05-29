@@ -1,10 +1,14 @@
 package com.englishwise.naaticclenglishwise.Activity;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
@@ -16,7 +20,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -29,6 +32,7 @@ import com.englishwise.naaticclenglishwise.Rtrofit.ApiClient;
 import com.englishwise.naaticclenglishwise.dialog.LoadingDialogs;
 import com.englishwise.naaticclenglishwise.storage.SharedPrefManager;
 import com.englishwise.naaticclenglishwise.storage.User_login;
+import com.englishwise.naaticclenglishwise.util.ImagePath;
 import com.englishwise.naaticclenglishwise.util.util;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.irozon.sneaker.Sneaker;
@@ -36,8 +40,12 @@ import com.irozon.sneaker.Sneaker;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,8 +53,9 @@ import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final int PICK_IMAGE = 100;
-    Vibrator vibe;
 
+    Vibrator vibe;
+    final int REquestPermissionCode = 1000;
     Uri imageUri;
     FrameLayout Opengallery;
     ImageView iv_profile_photo;
@@ -55,7 +64,12 @@ public class ProfileActivity extends AppCompatActivity {
     LinearLayout LL_number, LL_Email;
     //  Spinner language_Spinner;
     LoadingDialogs loadingDialogs;
-    String Language="Select Language";
+    String Language = "Select Language";
+    Context context;
+    String path = "null";
+    public boolean permissionStatus;
+    public static final int PERMISSION_REQUEST_CODE = 200;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
     /*    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);*/
+
         setContentView(R.layout.activity_profile);
         util.blackiteamstatusbar(this, R.color.white);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -84,20 +99,25 @@ public class ProfileActivity extends AppCompatActivity {
         LL_number = findViewById(R.id.LL_number);
         LL_Email = findViewById(R.id.LL_Email);
         iv_profile_photo = findViewById(R.id.iv_profile_photo);
+        context = ProfileActivity.this;
 
-
+        if (!ImagePath.checkPermissionss(context)) {
+            ImagePath.requestPermission(this);
+        }
         GetGoogleaccess();
 
         Opengallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openGallery();
+
+                    openGallery();
+
             }
         });
         selectlanguage_TV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Sucess("Change language", "All the current data will be lost on changing the language. Do you still want to proceed?");
+                //  Sucess("Change language", "All the current data will be lost on changing the language. Do you still want to proceed?");
                 ShowLanguage();
 
             }
@@ -111,6 +131,7 @@ public class ProfileActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String key = extras.getString("key");
+
 
             if (key.equals("2")) {
                 ET_Name.setText(extras.getString("personName"));
@@ -135,20 +156,66 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        System.out.println("requestCode" + requestCode);
+        switch (requestCode) {
+            case ImagePath.REquestPermissionCode:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permissin Granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Permissin Deined", Toast.LENGTH_SHORT).show();
+                }
+
+
+        }
+
+
+    }
+
+   /* private boolean checkPermissionss() {
+        //Check permission
+        int write_external_storage_result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        int record_audio_result = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
+                record_audio_result == PackageManager.PERMISSION_GRANTED;
+
+
+    }*/
 
     private void openGallery() {
+
         Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(gallery, PICK_IMAGE);
+
+      /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, PICK_PHOTO_FOR_AVATAR);*/
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            if (data == null)
+                return;
+
+            Uri uri = data.getData();
+            System.out.println("urii  " + uri + " " + uri.getPath());
+            path = ImagePath.getPath(context, uri);
+            System.out.println("urii path " + path);
+
             imageUri = data.getData();
             iv_profile_photo.setImageURI(imageUri);
+          /*  if(path!=null && !path.equals("")) {
+                File file = new File(path);
+                uploadImage(file);
+            }*/
         }
     }
+
 
     public void profile_continue(View view) {
         loadingDialogs.startLoadingDialogs();
@@ -157,7 +224,10 @@ public class ProfileActivity extends AppCompatActivity {
         String name = ET_Name.getText().toString().trim();
         String email = ET_Email.getText().toString().trim();
         // String Language = selectlanguage_TV.getText().toString().trim();
+
+
         String Number = ET_number.getText().toString().trim();
+
 
         if (name.isEmpty()) {
             Sneaker.with(this)
@@ -189,10 +259,26 @@ public class ProfileActivity extends AppCompatActivity {
                     .setMessage("")
                     .sneakError();
 
+        } else if (path.equals("null")) {
+            loadingDialogs.dismissDialog();
+
+            Sneaker.with(this)
+                    .setTitle("Select  Profile Image")
+                    .setMessage("")
+                    .sneakError();
         } else {
+            File file = new File(path);
+            RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            MultipartBody.Part image =
+                    MultipartBody.Part.createFormData("profile_image", file.getName(), requestFile);
 
+            RequestBody namee = RequestBody.create(MediaType.parse("multipart/form-data"), name);
+            RequestBody emaill = RequestBody.create(MediaType.parse("multipart/form-data"), email);
+            RequestBody Numberr = RequestBody.create(MediaType.parse("multipart/form-data"), Number);
+            RequestBody Languagee = RequestBody.create(MediaType.parse("multipart/form-data"), Language);
 
-            Call<ResponseBody> userlist = ApiClient.getUserService().registration(name, email, Number, Language);
+            Call<ResponseBody> userlist = ApiClient.getUserService().registration(namee, emaill, Numberr, Languagee, image);
+
 
             userlist.enqueue(new Callback<ResponseBody>() {
                 @Override
@@ -204,7 +290,8 @@ public class ProfileActivity extends AppCompatActivity {
                     if (response.code() == 200) {
                         try {
                             s = response.body().string();
-                            Toast.makeText(ProfileActivity.this, s + "", Toast.LENGTH_SHORT).show();
+                            Log.e("responsee", s);
+                            //  Toast.makeText(ProfileActivity.this, s + "", Toast.LENGTH_SHORT).show();
                             JSONObject jsonObject = new JSONObject(s);
                             JSONObject jsonObject1 = jsonObject.getJSONObject("records");
 
@@ -213,7 +300,7 @@ public class ProfileActivity extends AppCompatActivity {
                                     jsonObject1.getString("fullname"),
                                     jsonObject1.getString("phone")
                                     , jsonObject1.getString("email")
-                                    , jsonObject1.getString("profile_image"),
+                                    , getResources().getString(R.string.Proflie_url) + jsonObject1.getString("profile_image_name"),
                                     jsonObject1.getString("language"));
 
                             SharedPrefManager.getInstance(ProfileActivity.this)
@@ -248,38 +335,6 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-
-    public void Sucess(String titlee, String dess) {
-
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View view = inflater.inflate(R.layout.customdialog, null);
-        AlertDialog alertDialog = new AlertDialog.Builder(this)
-                .setView(view)
-                .setCancelable(false)
-                .create();
-
-        // alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        Button read_btn = view.findViewById(R.id.read_btn);
-        TextView title = view.findViewById(R.id.title);
-
-        TextView des = view.findViewById(R.id.message);
-
-        title.setText(titlee);
-        des.setText(dess);
-        read_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alertDialog.cancel();
-                ShowLanguage();
-                // Toast.makeText(getContext(), "ok", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-
-        alertDialog.show();
-    }
 
     public void ShowLanguage() {
 
@@ -379,4 +434,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         // alertDialog.show();
     }
+
+ /*   private void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
+        }, REquestPermissionCode);
+
+
+    }*/
+
 }

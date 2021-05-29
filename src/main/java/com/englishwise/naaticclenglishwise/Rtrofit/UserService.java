@@ -6,12 +6,17 @@ import com.englishwise.naaticclenglishwise.ModalResponse.VideoRespBean;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface UserService {
@@ -75,17 +80,45 @@ public interface UserService {
             @Field("email") String email
     );
 
-    @FormUrlEncoded
+   /* @Multipart
+    @POST("pending/pendingtransfer")
+    Call<SendAddAmountRequestResponse> SendAddAmountRequest(
+            @Header("Authorization") String authorization,
+            @Part("accountName") RequestBody Bankname,
+            @Part("accountNo") RequestBody Acc_no,
+            @Part("customerName") RequestBody Holder_name,
+            @Part("transactionId") RequestBody TransId,
+            @Part("amount") RequestBody Amount,
+            @Part("currency") RequestBody Currency,
+            @Part("utility") RequestBody utility,
+            @Part MultipartBody.Part image
+
+    );*/
+    @Multipart
     @POST("user/registration")
     Call<ResponseBody> registration(
-            @Field("fullname") String fullname,
-            @Field("email") String email,
-            @Field("phone") String phone,
-            @Field("language") String language
-    );
-
+            @Part("fullname") RequestBody fullname,
+            @Part("email") RequestBody email,
+            @Part("phone") RequestBody phone,
+            @Part("language") RequestBody language,
+            @Part MultipartBody.Part image);
+   /* @PUT("user/profileimage")
+    Call<ProfileImageResp> uploadPic(@Part MultipartBody.Part image);
+*/
     //read_vocabulary
-    //http://misfitamigos.com/naticcl_englishwise/vocabulary/read_vocabulary.php?
+    //http://misfitamigos.com/naticcl_englishwise/vocabulary/read_vocabulary.php
+
+   @Multipart
+   @POST("user/update_profile")
+   Call<ResponseBody> update_profile(
+           @Part("fullname") RequestBody fullname,
+           @Part("email") RequestBody email,
+           @Part("phone") RequestBody phone,
+           @Part("language") RequestBody language,
+           @Part("userid") RequestBody userid,
+           @Part MultipartBody.Part image);
+
+
     @FormUrlEncoded
     @POST("read/vocabulary")
     Call<ResponseBody> read_vocabulary(

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,7 +85,7 @@ public class MoreFragment extends Fragment {
     private void initView(View view) {
         final Vibrator vibe = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
         customdialog = new Customdialog(getContext());
-        vocabulary_LL = view.findViewById(R.id.Vocabulary_LL);
+
         iv_profile_photo=view.findViewById(R.id.iv_profile_photo);
 
         edit_profile_LL = view.findViewById(R.id.edit_profile_LL);
@@ -100,10 +101,11 @@ public class MoreFragment extends Fragment {
         Instagram_LL = view.findViewById(R.id.Instagram_LL);
         name = view.findViewById(R.id.name);
         email = view.findViewById(R.id.email);
+        Log.e("Image",R.string.Proflie_url+SharedPrefManager.getInstans(getContext().getApplicationContext()).getprofileImage());
         try {
 
             Glide.with(getContext())
-                    .load("https://misfitamigos.com/naticcl_api/user_guide/_images/"+SharedPrefManager.getInstans(getContext().getApplicationContext()).getprofileImage())
+                    .load(SharedPrefManager.getInstans(getContext().getApplicationContext()).getprofileImage())
                     .into(iv_profile_photo);
         }catch (Exception e)
         {
@@ -188,7 +190,7 @@ public class MoreFragment extends Fragment {
         });
 
 
-        vocabulary_LL.setOnClickListener(new View.OnClickListener() {
+       /* vocabulary_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(50);
@@ -198,7 +200,7 @@ public class MoreFragment extends Fragment {
             }
 
 
-        });
+        });*/
         Share_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

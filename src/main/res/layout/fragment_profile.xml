@@ -190,6 +190,7 @@
                             android:background="@color/gradient_end_color" />
                     </LinearLayout>
 
+<!--
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -220,6 +221,7 @@
                                 app:srcCompat="@drawable/ic_toolbar_back" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+-->
                     <!--</
                                         <View style="@style/MenuItemUnderline" />
                     -->

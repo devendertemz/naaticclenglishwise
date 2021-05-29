@@ -263,7 +263,6 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
                     try {
 
 
-                        loadingDialogs.dismissDialog();
                         VideoRespBean blogRespBean = response.body();
 
 
@@ -274,6 +273,7 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
                         youtubeVideo_adapter = new YoutubeVideo_Adapter(data, activity.getApplicationContext(), HomeFragment.this::onClick);
                         video_adapter_layout.setItemAnimator(new DefaultItemAnimator());
                         video_adapter_layout.setAdapter(youtubeVideo_adapter);
+                        loadingDialogs.dismissDialog();
 
 
                     } catch (Exception ex) {

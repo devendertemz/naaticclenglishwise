@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_HOME, R.drawable.ic_home));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_TESTSET, R.drawable.ic_testset));
-        bottomNavigation.add(new MeowBottomNavigation.Model(ID_COACHING, R.drawable.ic_coaching));
+        bottomNavigation.add(new MeowBottomNavigation.Model(ID_COACHING, R.drawable.vocabulary));
         bottomNavigation.add(new MeowBottomNavigation.Model(ID_MORE, R.drawable.ic_more));
 
 

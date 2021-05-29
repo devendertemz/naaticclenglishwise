@@ -100,7 +100,6 @@ public class VideoActivity extends AppCompatActivity implements ItemClickListene
                     try {
 
 
-                        loadingDialogs.dismissDialog();
                         VideoRespBean blogRespBean = response.body();
 
 
@@ -111,6 +110,7 @@ public class VideoActivity extends AppCompatActivity implements ItemClickListene
                         youtubeVideo_adapterr = new YoutubeVideo_Adapterr(data, getApplicationContext(), VideoActivity.this);
                         RecyclerView_Video.setItemAnimator(new DefaultItemAnimator());
                         RecyclerView_Video.setAdapter(youtubeVideo_adapterr);
+                        loadingDialogs.dismissDialog();
 
 
                     } catch (Exception ex) {
