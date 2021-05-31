@@ -20,6 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.englishwise.naaticclenglishwise.Activity.BlogActivity;
+import com.englishwise.naaticclenglishwise.Activity.Contact_Activity;
+import com.englishwise.naaticclenglishwise.Activity.VideoActivity;
 import com.englishwise.naaticclenglishwise.Activity.VideoPlayerActivity;
 import com.englishwise.naaticclenglishwise.Adapter.YoutubeVideo_Adapter;
 import com.englishwise.naaticclenglishwise.Modal.Youtube_Model;
@@ -40,7 +43,7 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment implements ItemClickListenerr {
 
     TextView Hindi_TV, Tamil_TV, Urdu_TV, Punjabi_TV, Malayalam_TV, Telugu_TV, Nepaese_TV, Gujarati_TV, Spanish_TV, Start_Practice;
-    LinearLayout AllCourse_LL, PTEBook_LL, AllBranch_LL, Practice_LL, OnlineClasse_LL, Stories_LL;
+    LinearLayout AllCourse_LL, PTEBook_LL, AllBranch_LL, speakin_Natti, Naatiwork_LL, Marking_LL, Intro_LL, Important_LL;
     RecyclerView video_adapter_layout;
 
     LoadingDialogs loadingDialogs;
@@ -48,7 +51,7 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
 
     private ArrayList<VideoRespBean.Datum> data;
     YoutubeVideo_Adapter youtubeVideo_adapter;
-
+    Youtube_Model youtube_model;
 
     public HomeFragment() {
     }
@@ -92,10 +95,11 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
         PTEBook_LL = view.findViewById(R.id.PTE_E_Book);
         AllCourse_LL = view.findViewById(R.id.All_Courses);
 
-
-        Practice_LL = view.findViewById(R.id.Practice_LL);
-        OnlineClasse_LL = view.findViewById(R.id.OnlineClasse_LL);
-        Stories_LL = view.findViewById(R.id.Stories_LL);
+        Important_LL = view.findViewById(R.id.Important_LL);
+        Intro_LL = view.findViewById(R.id.Intro_LL);
+        speakin_Natti = view.findViewById(R.id.speakin_Natti);
+        Naatiwork_LL = view.findViewById(R.id.Naatiwork_LL);
+        Marking_LL = view.findViewById(R.id.Marking_LL);
 
         video_adapter_layout = view.findViewById(R.id.video_adapter_layout);
         loadingDialogs = new LoadingDialogs(getActivity());
@@ -205,44 +209,82 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
         PTEBook_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "PTE Book", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "PTE Book", Toast.LENGTH_SHORT).show();
                 vibe.vibrate(50);
-
+                Intent in = new Intent(getActivity(), BlogActivity.class);
+                startActivity(in);
             }
         });
         AllBranch_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "All Branch", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "All Branch", Toast.LENGTH_SHORT).show();
+                Intent in = new Intent(getActivity(), Contact_Activity.class);
+                startActivity(in);
                 vibe.vibrate(50);
 
             }
         });
-        Practice_LL.setOnClickListener(new View.OnClickListener() {
+
+
+        Important_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Practice", Toast.LENGTH_SHORT).show();
+                youtube_model = new Youtube_Model("SVLJCOHh57E", "Intro_LL", "LOCAL");
+                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+                intent.putExtra("youtube_model", youtube_model);
+                startActivity(intent);
+
+                Toast.makeText(getContext(), "Intro_LL", Toast.LENGTH_SHORT).show();
                 vibe.vibrate(50);
 
             }
         });
-        OnlineClasse_LL.setOnClickListener(new View.OnClickListener() {
+        Marking_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "OnlineClasse", Toast.LENGTH_SHORT).show();
+                youtube_model = new Youtube_Model("SVLJCOHh57E", "Marking_LL", "LOCAL");
+                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+                intent.putExtra("youtube_model", youtube_model);
+                startActivity(intent);
+                Toast.makeText(getContext(), "Marking_LL", Toast.LENGTH_SHORT).show();
                 vibe.vibrate(50);
 
             }
         });
-        Stories_LL.setOnClickListener(new View.OnClickListener() {
+        Naatiwork_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Stories", Toast.LENGTH_SHORT).show();
+                youtube_model = new Youtube_Model("SVLJCOHh57E", "Naatiwork_LL", "LOCAL");
+                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+                intent.putExtra("youtube_model", youtube_model);
+                startActivity(intent);
+                Toast.makeText(getContext(), "Naatiwork_LL", Toast.LENGTH_SHORT).show();
                 vibe.vibrate(50);
 
             }
         });
+        speakin_Natti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                youtube_model = new Youtube_Model("SVLJCOHh57E", "speakin_Natti", "LOCAL");
+                Intent intent = new Intent(getActivity(), VideoPlayerActivity.class);
+                intent.putExtra("youtube_model", youtube_model);
+                startActivity(intent);
+                Toast.makeText(getContext(), "speakin_Natti", Toast.LENGTH_SHORT).show();
+                vibe.vibrate(50);
 
+            }
+        });
+        Intro_LL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getContext(), "Intro_LL", Toast.LENGTH_SHORT).show();
+                vibe.vibrate(50);
+
+            }
+        });
     }
 
 
@@ -302,10 +344,10 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
                 data.get(position).getVideoName(),
                 data.get(position).getTitle(),
                 data.get(position).getThumbnailImage(),
-                data.get(position).getVideoUrl());
+                data.get(position).getVideoUrl(), "API");
 
-        Intent intent=new Intent(getContext(), VideoPlayerActivity.class);
-        intent.putExtra("youtube_model",youtube_model);
+        Intent intent = new Intent(getContext(), VideoPlayerActivity.class);
+        intent.putExtra("youtube_model", youtube_model);
         startActivity(intent);
         //Toast.makeText(activity, data.get(position).getProfileVideoId()+"", Toast.LENGTH_SHORT).show();
 

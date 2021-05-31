@@ -86,16 +86,16 @@
                     android:textSize="14dp" />
 
                 <TextView
-                    android:layout_marginTop="20sp"
-                    android:textAlignment="center"
                     android:id="@+id/Start_Practice"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_marginTop="20sp"
                     android:background="@color/gradient_end_color"
                     android:padding="5dp"
                     android:paddingTop="20dp"
                     android:text="Start Practice"
+                    android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     tools:ignore="RtlCompat" />
@@ -414,115 +414,262 @@
 
             <include layout="@layout/latest_video_homepage" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
+
 
                 <LinearLayout
-                    android:id="@+id/Practice_LL"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:background="@color/white2"
 
-                    android:padding="5dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="60dp"
 
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/practice" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/robotomedium"
+                        android:layout_margin="5dp"
+                        android:background="@color/white2"
                         android:gravity="center"
-                        android:padding="5dp"
-                        android:text="How to Practice "
-                        android:textColor="@color/black"
-                        android:textSize="12dp" />
+                        android:orientation="horizontal">
 
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="3dp"
-                        android:layout_gravity="center"
-                        android:background="@color/red" />
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardElevation="5dp"
+                            card_view:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:id="@+id/Important_LL"
+                                android:layout_width="100dp"
+                                android:layout_height="130dp"
+                                android:orientation="vertical"
+
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/practice" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/robotomedium"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Important thing"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardBackgroundColor="@color/white2"
+
+                            card_view:cardElevation="5dp"
+                            card_view:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:id="@+id/Intro_LL"
+
+                                android:layout_width="100dp"
+                                android:layout_height="130dp"
+                                android:orientation="vertical"
+                                android:gravity="center"
+
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/stories" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/robotomedium"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Intro to Naati"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardBackgroundColor="@color/white2"
+
+                            card_view:cardElevation="5dp"
+                            card_view:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:id="@+id/Marking_LL"
+                                android:gravity="center"
+
+                                android:layout_width="100dp"
+                                android:layout_height="130dp"
+                                android:orientation="vertical"
+
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/classes" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/robotomedium"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="Marking system"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/white2"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardElevation="5dp"
+                            card_view:cardBackgroundColor="@color/white2"
+
+                            card_view:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:id="@+id/Naatiwork_LL"
+                                android:layout_width="100dp"
+                                android:layout_height="130dp"
+                                android:orientation="vertical"
+                                android:gravity="center"
+
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/practice" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/robotomedium"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="How Naati work "
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            card_view:cardCornerRadius="5dp"
+                            card_view:cardBackgroundColor="@color/white2"
+
+                            card_view:cardElevation="5dp"
+                            card_view:cardUseCompatPadding="true">
+
+                            <LinearLayout
+                                android:id="@+id/speakin_Natti"
+
+                                android:layout_width="100dp"
+                                android:layout_height="130dp"
+                                android:orientation="vertical"
+
+                                android:padding="5dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/stories" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/robotomedium"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="How to speak in Natti"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+
+                                <View
+                                    android:layout_width="50dp"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/red" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/Stories_LL"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="60dp"
-
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/stories" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/robotomedium"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Our Stories"
-                        android:textColor="@color/black"
-                        android:textSize="12dp" />
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="3dp"
-                        android:layout_gravity="center"
-                        android:background="@color/red" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/OnlineClasse_LL"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="60dp"
-
-                        android:layout_height="70dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/classes" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/robotomedium"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Online Classe"
-                        android:textColor="@color/black"
-                        android:textSize="12dp" />
-
-                    <View
-                        android:layout_width="50dp"
-                        android:layout_height="3dp"
-                        android:layout_gravity="center"
-                        android:background="@color/red" />
-                </LinearLayout>
-
-
-            </LinearLayout>
 
         </LinearLayout>
 

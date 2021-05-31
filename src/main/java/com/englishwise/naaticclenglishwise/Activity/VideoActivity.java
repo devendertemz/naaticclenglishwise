@@ -138,7 +138,8 @@ public class VideoActivity extends AppCompatActivity implements ItemClickListene
                 data.get(position).getVideoName(),
                 data.get(position).getTitle(),
                 data.get(position).getThumbnailImage(),
-                data.get(position).getVideoUrl());
+                data.get(position).getVideoUrl(),
+                "API");
 
         Intent intent=new Intent(VideoActivity.this, VideoPlayerActivity.class);
         intent.putExtra("youtube_model",youtube_model);
