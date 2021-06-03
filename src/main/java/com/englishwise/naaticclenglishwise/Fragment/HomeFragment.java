@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.englishwise.naaticclenglishwise.Activity.BlogActivity;
 import com.englishwise.naaticclenglishwise.Activity.Contact_Activity;
+import com.englishwise.naaticclenglishwise.Activity.Intro_to_Natti_Activity;
 import com.englishwise.naaticclenglishwise.Activity.VideoActivity;
 import com.englishwise.naaticclenglishwise.Activity.VideoPlayerActivity;
 import com.englishwise.naaticclenglishwise.Adapter.YoutubeVideo_Adapter;
@@ -279,7 +280,8 @@ public class HomeFragment extends Fragment implements ItemClickListenerr {
         Intro_LL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), Intro_to_Natti_Activity.class);
+                startActivity(intent);
                 Toast.makeText(getContext(), "Intro_LL", Toast.LENGTH_SHORT).show();
                 vibe.vibrate(50);
 

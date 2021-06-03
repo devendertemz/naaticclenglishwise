@@ -32,6 +32,54 @@
     <string name="action_text">OK</string>
     <string name="message_enter_a_valid_Mobile_number">Enter a valid Mobile number</string>
     <string name="main_page_selected">%s page is selected</string>
+
+    <string name="introduction">1.)2 dialogues- 300 words each.
+        \n2.)45 marks for each dialogue
+        \n3.)Pass- Score at least 29 in each dialogue and Overall score – 63/90.
+        \n4.)1 segment- not more than 35 words.
+        \n5.)You have 1 repeat per dialogue without any penalty. You should utilize it.
+        \n6.)Extra repeat is penalised.
+        \n7.)You should use correction- if you make a mistake while speaking.
+\n8.)Correction- marks deducted, but it is better to use correction rather than answering   wrong.
+        \n9.)Total marks = 90.
+    </string>
+
+
+    <string name="note_taking"> 1.)Use abbreviations.
+        \n2.)Develop your own strategy that works for you.
+        \n3.)Simultaneously listening and writing.
+        \n4.)Focus on listening so that you understand the dialogue.
+        \n5.)Use Visualization technique
+        \n6.)Be careful with names, dates, location, address etc
+\7.)Correction- marks deducted, but it is better to use correction rather than answering   wrong.
+        \n8.)Total marks = 90.
+    </string>
+    <string name="Speaking">1.)Speak slow and clear.
+        \n2.)Mirror image of meaning, not words.
+        \n3.)Pronunciation- Clear.
+        \n4.)Fluency- Not too slow or too fast.
+        \n5.)Speak after 2-3 seconds but 3-5 seconds is also acceptable.
+        \n6.)Speak after 2-3 seconds but 3-5 seconds is also acceptable.
+\7.)Start speaking in Hindi in class and with friends
+        \n8.)Learn Vocabulary- Shabd Kosh Dictionary.
+                \n9.)Be careful with names, dates, location, address etc.
+
+    </string>
+
+
+    <string name="Marking">1.)Omission, addition, and meaning distortion.
+        \n2.)Hesitations, pauses.
+        \n3.)Pronunciation &amp; Fluency.
+        \n4.)Extra repeat &amp; correction.
+        \n5.)Lack of Interpreting skills.
+        \n6.)Note taking interfering with interpreting.
+\7.)Start speaking in Hindi in class and with friends
+        \n8.)Learn Vocabulary- Shabd Kosh Dictionary.
+                \n9.)Be careful with names, dates, location, address etc.
+
+    </string>
+
+
     <string-array name="spinner_Langage">
 
         <item>English</item>

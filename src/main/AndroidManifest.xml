@@ -9,15 +9,13 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     <application
-
         android:allowBackup="true"
-
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,8 +25,7 @@
         android:targetSandboxVersion="2"
         android:theme="@style/Theme.NaatiCCLEnglishwise"
         android:usesCleartextTraffic="true">
-
-
+        <activity android:name=".Activity.Intro_to_Natti_Activity"></activity>
         <activity android:name=".Activity.BlogDescrpiption_Activity" />
         <activity android:name=".Activity.PracticePlayingTestActivity" />
         <activity android:name=".Activity.Contact_Activity" />
@@ -94,7 +91,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.SplashActivity"
-
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -80,20 +80,20 @@ public interface UserService {
             @Field("email") String email
     );
 
-   /* @Multipart
-    @POST("pending/pendingtransfer")
-    Call<SendAddAmountRequestResponse> SendAddAmountRequest(
-            @Header("Authorization") String authorization,
-            @Part("accountName") RequestBody Bankname,
-            @Part("accountNo") RequestBody Acc_no,
-            @Part("customerName") RequestBody Holder_name,
-            @Part("transactionId") RequestBody TransId,
-            @Part("amount") RequestBody Amount,
-            @Part("currency") RequestBody Currency,
-            @Part("utility") RequestBody utility,
-            @Part MultipartBody.Part image
+    /* @Multipart
+     @POST("pending/pendingtransfer")
+     Call<SendAddAmountRequestResponse> SendAddAmountRequest(
+             @Header("Authorization") String authorization,
+             @Part("accountName") RequestBody Bankname,
+             @Part("accountNo") RequestBody Acc_no,
+             @Part("customerName") RequestBody Holder_name,
+             @Part("transactionId") RequestBody TransId,
+             @Part("amount") RequestBody Amount,
+             @Part("currency") RequestBody Currency,
+             @Part("utility") RequestBody utility,
+             @Part MultipartBody.Part image
 
-    );*/
+     );*/
     @Multipart
     @POST("user/registration")
     Call<ResponseBody> registration(
@@ -108,15 +108,15 @@ public interface UserService {
     //read_vocabulary
     //http://misfitamigos.com/naticcl_englishwise/vocabulary/read_vocabulary.php
 
-   @Multipart
-   @POST("user/update_profile")
-   Call<ResponseBody> update_profile(
-           @Part("fullname") RequestBody fullname,
-           @Part("email") RequestBody email,
-           @Part("phone") RequestBody phone,
-           @Part("language") RequestBody language,
-           @Part("userid") RequestBody userid,
-           @Part MultipartBody.Part image);
+    @Multipart
+    @POST("user/update_profile")
+    Call<ResponseBody> update_profile(
+            @Part("fullname") RequestBody fullname,
+            @Part("email") RequestBody email,
+            @Part("phone") RequestBody phone,
+            @Part("language") RequestBody language,
+            @Part("userid") RequestBody userid,
+            @Part MultipartBody.Part image);
 
 
     @FormUrlEncoded
@@ -130,8 +130,6 @@ public interface UserService {
     Call<List<MockRespBean>> Read_MocktestList(
             @Field("lan") String lan
     );
-
-
 
 
     @FormUrlEncoded
@@ -154,8 +152,6 @@ public interface UserService {
     @GET("auth/profile_video")
     Call<VideoRespBean> Get_YoutubeVideo(
     );
-
-
 
 
 }

@@ -437,9 +437,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardBackgroundColor="@color/red"
                             card_view:cardCornerRadius="5dp"
                             card_view:cardElevation="5dp"
+
                             card_view:cardUseCompatPadding="true">
 
                             <LinearLayout
@@ -456,7 +457,8 @@
 
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/practice" />
+                                    android:src="@drawable/importentting"
+                                    card_view:tint="@color/white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -464,15 +466,15 @@
                                     android:fontFamily="@font/robotomedium"
                                     android:gravity="center"
                                     android:padding="5dp"
-                                    android:text="Important thing"
-                                    android:textColor="@color/black"
+                                    android:text="Important Thing"
+                                    android:textColor="@color/white"
                                     android:textSize="10dp" />
 
                                 <View
                                     android:layout_width="50dp"
                                     android:layout_height="3dp"
                                     android:layout_gravity="center"
-                                    android:background="@color/red" />
+                                    android:background="@color/white2" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -481,7 +483,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             card_view:cardCornerRadius="5dp"
-                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardBackgroundColor="@color/red"
 
                             card_view:cardElevation="5dp"
                             card_view:cardUseCompatPadding="true">
@@ -501,7 +503,8 @@
 
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/stories" />
+                                    android:src="@drawable/introduction"
+                                    card_view:tint="@color/white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -510,14 +513,14 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="Intro to Naati"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/white"
                                     android:textSize="10dp" />
 
                                 <View
                                     android:layout_width="50dp"
                                     android:layout_height="3dp"
                                     android:layout_gravity="center"
-                                    android:background="@color/red" />
+                                    android:background="@color/white2" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -526,7 +529,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             card_view:cardCornerRadius="5dp"
-                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardBackgroundColor="@color/red"
 
                             card_view:cardElevation="5dp"
                             card_view:cardUseCompatPadding="true">
@@ -546,7 +549,8 @@
 
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/classes" />
+                                    android:src="@drawable/marking"
+                                    card_view:tint="@color/white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -556,14 +560,14 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="Marking system"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/white"
                                     android:textSize="10dp" />
 
                                 <View
                                     android:layout_width="50dp"
                                     android:layout_height="3dp"
                                     android:layout_gravity="center"
-                                    android:background="@color/red" />
+                                    android:background="@color/white2" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -585,7 +589,7 @@
                             android:layout_gravity="center"
                             card_view:cardCornerRadius="5dp"
                             card_view:cardElevation="5dp"
-                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardBackgroundColor="@color/red"
 
                             card_view:cardUseCompatPadding="true">
 
@@ -603,7 +607,7 @@
 
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/practice" />
+                                    android:src="@drawable/naatiwork" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -612,14 +616,14 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="How Naati work "
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/white"
                                     android:textSize="10dp" />
 
                                 <View
                                     android:layout_width="50dp"
                                     android:layout_height="3dp"
                                     android:layout_gravity="center"
-                                    android:background="@color/red" />
+                                    android:background="@color/white2" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -628,7 +632,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             card_view:cardCornerRadius="5dp"
-                            card_view:cardBackgroundColor="@color/white2"
+                            card_view:cardBackgroundColor="@color/red"
 
                             card_view:cardElevation="5dp"
                             card_view:cardUseCompatPadding="true">
@@ -647,7 +651,8 @@
 
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/stories" />
+                                    android:src="@drawable/speaknaati"
+                                    card_view:tint="@color/white" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -656,14 +661,14 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="How to speak in Natti"
-                                    android:textColor="@color/black"
+                                    android:textColor="@color/white"
                                     android:textSize="10dp" />
 
                                 <View
                                     android:layout_width="50dp"
                                     android:layout_height="3dp"
                                     android:layout_gravity="center"
-                                    android:background="@color/red" />
+                                    android:background="@color/white2" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
 
